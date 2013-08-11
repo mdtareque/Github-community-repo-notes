@@ -1,0 +1,1 @@
+1. LicenseApache license can be added esily by placing the text as given in the below link		http://www.apache.org/licenses/LICENSE-2.0.html#apply	Example repo-https://github.com/nostalgiaz/bootstrap-switch/blob/master/LICENSEOther license example reposMIT-SO post - http://stackoverflow.com/questions/5760214/how-do-i-release-my-project-with-an-apache-license-on-github

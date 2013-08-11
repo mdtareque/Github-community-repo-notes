@@ -1,0 +1,6 @@
+1. Boostrap Switch- css-js-html
+Description: On/off buttons 
+URL: https://github.com/nostalgiaz/bootstrap-switch
+Good points to take: 
+1. switch a keyword in ie8 - https://github.com/nostalgiaz/bootstrap-switch/commit/511ffa3f56cc1347e1aeb59bcd3b6863db02e098
+2. The link to js file can be with or without http: - https://github.com/nostalgiaz/bootstrap-switch/commit/c91d58f3d0e49d4e9c72dbe2b042eea9d16afcdd
