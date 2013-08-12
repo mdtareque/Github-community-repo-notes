@@ -2,5 +2,33 @@
 Description: On/off buttons 
 URL: https://github.com/nostalgiaz/bootstrap-switch
 Good points to take: 
-1. switch a keyword in ie8 - https://github.com/nostalgiaz/bootstrap-switch/commit/511ffa3f56cc1347e1aeb59bcd3b6863db02e098
-2. The link to js file can be with or without http: - https://github.com/nostalgiaz/bootstrap-switch/commit/c91d58f3d0e49d4e9c72dbe2b042eea9d16afcdd
+a. switch a keyword in ie8 - https://github.com/nostalgiaz/bootstrap-switch/commit/511ffa3f56cc1347e1aeb59bcd3b6863db02e098
+b. The link to js file can be with or without http: - https://github.com/nostalgiaz/bootstrap-switch/commit/c91d58f3d0e49d4e9c72dbe2b042eea9d16afcdd
+
+2. normalize.css - css
+Description: HTML5-ready alternative to CSS resets
+URL: https://github.com/necolas/normalize.css
+Good points:
+a. Good reference to the different HTML tags like range, datetime, week, color and much more.
+b. Gets to know what lacks in IE(mostly), and other browsers.
+c. Should be used as base to start any work in css, so that any new style we code are applicable equally to all browsers (hope so).
+
+3. hint.css - css
+Description: A tooltip library in CSS
+URL: https://github.com/chinchang/hint.css
+Good points:
+a. Easy to use for quick tooltips. Custom orientation, color capability
+b. Makes use of Custom data-* attribute - http://www.w3.org/html/wg/drafts/html/master/dom.html#custom-data-attribute
+Other links - http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/all-you-need-to-know-about-the-html5-data-attribute/
+
+4. mit-license - curl
+Description: Generic mit license per user
+URL: https://github.com/remy/mit-license
+Good points:
+a. Create once a user url and link it in all projects.
+
+5. github-network-analysis - latex
+Description: Network repo analysis and visualization
+URL: https://github.com/coyotebush/github-network-analysis
+Good points:
+a. Referened here to check the quick latex code.
