@@ -32,3 +32,10 @@ Description: Network repo analysis and visualization
 URL: https://github.com/coyotebush/github-network-analysis
 Good points:
 a. Referened here to check the quick latex code.
+
+6. jslint.js - js
+Description: The JavaScript Code Quality Tool
+URL: https://github.com/douglascrockford/JSLint/
+Good points:
+a. Created completely in js with complex design.
+
