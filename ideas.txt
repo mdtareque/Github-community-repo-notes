@@ -1,0 +1,7 @@
+> Facts and figures
+
+> Create reverse of regex tester 
+http://www.regexper.com/
+http://www.debuggex.com/?re=&str=
+http://regexpal.com/
+

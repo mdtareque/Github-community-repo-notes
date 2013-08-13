@@ -10,3 +10,7 @@ js
 ===
 jsLint.js : code quality tool
 highcharts.com : Highcharts JS, the JavaScript charting framework
+
+Epic links : things to know
+=======
+http://www.quirksmode.org/dom/intro.html
