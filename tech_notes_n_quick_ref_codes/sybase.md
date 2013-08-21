@@ -1,15 +1,15 @@
-##General DDL and DML queries
-### Quick DDL
-
-    create table t (name char(10),id int)
-    alter table t modify name char(40)
-
 ## Sybase Learning
 [Known sybase jConnect bugs](http://www.sybase.com/detail?id=1033283)  
 [All sql operators](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.commands/html/commands/commands98.htm)  
 Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/files/White_Papers/SY-Required-SQL-Changes-for-ASE15-v.1-073009-WP.pdf)  
 [All sybase error codes](http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.infocenter.dc36584.1260/html/iqerror/Errsybcode.htm)  
 [datetime conversion](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc38151.1530/doc/html/san1278453000116.html)  
+
+### General DDL and DML queries
+### Quick DDL
+
+    create table t (name char(10),id int)
+    alter table t modify name char(40)
 
 #### Better string concatenation ISO/ANSI SQL compliant
 
@@ -58,7 +58,7 @@ Output - `0x00503412`
 ### Replicate
 
     select REPLICATE( 'repeat', 3 )
-**Preset in 15\+ **
+__Preset in 15\+__
 
     select UCASE, LCASE, HTML_ENCODE, REPLACE, REPEAT
 
