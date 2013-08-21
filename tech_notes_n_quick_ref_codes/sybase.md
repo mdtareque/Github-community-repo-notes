@@ -1,7 +1,7 @@
 ##General DDL and DML queries
 ### Quick DDL
 
-    create table t (name char(10),id int
+    create table t (name char(10),id int)
     alter table t modify name char(40)
 
 ## Sybase Learning
@@ -24,3 +24,5 @@ Output - `0x00503412`
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
 - `Alter table` queries are not re-runnable.
+- `DROP PROCEDURE` does not allow specifying the database name as prefix.
+- `sp_describe` allows the database to be prefixed with 2-dot notation, to look for objects in the referenced database.
