@@ -109,6 +109,17 @@ __Preset in 15\+__
 
     print '%1\! %2\!', @local_date, @gmt_date
 
+Dateadd fine-tune
+
+    select dateadd(ms, -1  , getDate() )  -- milli-seconds
+    select dateadd(ss, -10 , getDate() )  -- seconds
+    select dateadd(mi, -10 , getDate() )  -- minutes
+    select dateadd(hh, -1  , getDate() )  -- hours
+    select dateadd(dd, -1  , getDate() )  -- days
+    select dateadd(wk, -1  , getDate() )  -- weeks
+    select dateadd(mm, -1  , getDate() )  -- months
+    select dateadd(yy,  1  , getDate() )  -- years
+
 ### Casting
 
     select CAST( 1 + 2 AS CHAR )
