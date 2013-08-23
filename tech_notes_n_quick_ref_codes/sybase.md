@@ -151,3 +151,4 @@ Options set can be seen by _@@options_ that returns a [hex output](http://infoce
 - `DROP PROCEDURE` does not allow specifying the database name as prefix.
 - `sp_describe` allows the database to be prefixed with 2-dot notation, to look for objects in the referenced database.
 - `TEXT` and `IMAGE` datatypes are invalid for parameters or local variables
+- Column identifier name maximum length is 30.
