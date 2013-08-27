@@ -6,12 +6,20 @@ Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/fi
 [datetime conversion](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc38151.1530/doc/html/san1278453000116.html)  
 
 ### General DDL and DML queries
-### Quick DDL
+Quick DDL
 
     create table t (name char(10),id int)
     alter table t modify name char(40)
 
-#### Better string concatenation ISO/ANSI SQL compliant
+Rename a column
+
+    exec sp_rename
+        @objname = 'tableName.columnName',
+        @newname = 'NewColumnName',
+        @objtype = 'COLUMN'
+ 
+
+### Better string concatenation ISO/ANSI SQL compliant
 
     Declare @d char(2)
     select 'test' || 'adf' || @d || ".."
