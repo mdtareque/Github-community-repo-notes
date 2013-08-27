@@ -168,3 +168,4 @@ Test for null
 - `TEXT` and `IMAGE` datatypes are invalid for parameters or local variables
 - Column identifier name maximum length is 30.
 - Error for `if null <> null select ''` - 'Invalid operator for datatype op: != type: VOID TYPE', shows `<>` is replaced by `!=` internally
+- When a `char` or `unichar` value is declared to allow nulls, Adaptive Server stores it internally as `varchar` or `univarchar`. And datalength of any `NULL` data returns `NULL`.
