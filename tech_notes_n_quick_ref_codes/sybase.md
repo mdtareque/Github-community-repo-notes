@@ -145,6 +145,13 @@ Get the users group and access level on a table.
 
 Options set can be seen by _@@options_ that returns a [hex output](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.sqlug/html/sqlug/sqlug611.htm).
 
+### Testing
+
+Test for null
+
+    if 0.0 != null
+        select 'Yes'
+
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
 - `Alter table` queries are not re-runnable.
@@ -152,3 +159,4 @@ Options set can be seen by _@@options_ that returns a [hex output](http://infoce
 - `sp_describe` allows the database to be prefixed with 2-dot notation, to look for objects in the referenced database.
 - `TEXT` and `IMAGE` datatypes are invalid for parameters or local variables
 - Column identifier name maximum length is 30.
+- Error for `if null <> null select ''` - 'Invalid operator for datatype op: != type: VOID TYPE', shows `<>` is replaced by `!=` internally
