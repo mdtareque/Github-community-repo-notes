@@ -18,7 +18,14 @@ Rename a column
         @newname = 'NewColumnName',
         @objtype = 'COLUMN'
  
+Add a column with a default value
 
+    alter table MY_TABLE
+    add status varchar (30) 
+    default 'IN Progress' not null 
+    -- dropping it
+    alter table MY_TABLE drop status
+ 
 ### Better string concatenation ISO/ANSI SQL compliant
 
     Declare @d char(2)
