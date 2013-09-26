@@ -10,3 +10,5 @@ https://konklone.com/post/switch-to-https-now-for-free
 
 http://www.bentobox.io/  tutorial inks  
 
+
+http://nvie.com/posts/a-successful-git-branching-model/
