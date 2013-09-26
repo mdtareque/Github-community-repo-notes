@@ -7,3 +7,6 @@ http://redotheweb.com/2013/05/15/client-side-full-text-search-in-css.html
 http://10kloc.wordpress.com/2013/08/25/plain-text-doesnt-exist-unicode-and-encodings-demystified  
 
 https://konklone.com/post/switch-to-https-now-for-free
+
+http://www.bentobox.io/  tutorial inks  
+
