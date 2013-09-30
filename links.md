@@ -12,3 +12,7 @@ http://www.bentobox.io/  tutorial inks
 
 
 http://nvie.com/posts/a-successful-git-branching-model/
+
+https://www.google.com/webdesigner/
+
+http://gitolite.com/gcs/index.html - git concepts simplified
