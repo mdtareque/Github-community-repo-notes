@@ -11,6 +11,11 @@ Quick DDL
     create table t (name char(10),id int)
     alter table t modify name char(40)
 
+Column addition by `alter table` by default adds a non-NULL column, hence required to specify a default value is nullable is not mentioned
+
+    alter table t add c varchar(15)
+Error -> _ALTER TABLE 't' failed. Default clause is required in order to add non-NULL column 'c'._
+
 Rename a column
 
     exec sp_rename
