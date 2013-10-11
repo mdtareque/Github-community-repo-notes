@@ -73,4 +73,14 @@ Convert a timestamp to date and do the manipulations
 
     date -d 20130818" -17280 seconds" +%Y%m%d_%s
 
+### Build jenkins job via shell-script
+
+
+token=mtk
+job_name=JobName
+jenkins_url=http://server:port
+jsonDate='json={"parameter":[{"name":"Test","value":"true"}]}&Submit=Build'
+
+curl --silent -u  ptpfeeds:ptpfeeds --show-error --data $jsonData $jenkins_url/job/$job_name/build?token=$token\&cause=BuiltFromShellScript
+
 ## Commandline navagation keyboard shortcuts
