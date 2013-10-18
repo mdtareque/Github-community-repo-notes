@@ -129,7 +129,7 @@ __Preset in 15\+__
 
     print '%1\! %2\!', @local_date, @gmt_date
 
-Dateadd fine-tune
+##### Dateadd fine-tune
 
     select dateadd(ms, -1  , getDate() )  -- milli-seconds
     select dateadd(ss, -10 , getDate() )  -- seconds
@@ -139,6 +139,14 @@ Dateadd fine-tune
     select dateadd(wk, -1  , getDate() )  -- weeks
     select dateadd(mm, -1  , getDate() )  -- months
     select dateadd(yy,  1  , getDate() )  -- years
+
+#### Date parts
+
+    select datepart(dd,getdate())  -- day
+    select datepart(dw,getdate())  -- day of week 1 - Sunday
+    select datepart(wk,getdate())  -- week of year
+    select datepart(dy,getdate())  -- day of year
+    select datepart(qq,getdate())  -- quarter
 
 ### Casting
 
