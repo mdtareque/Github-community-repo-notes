@@ -15,7 +15,7 @@ Quick DDL
 Column addition by `alter table` by default adds a non-NULL column, hence required to specify a default value is nullable is not mentioned
 
     alter table t add c varchar(15)
-Error -> _ALTER TABLE 't' failed. Default clause is required in order to add non-NULL column 'c'._
+> Error -> _ALTER TABLE 't' failed. Default clause is required in order to add non-NULL column 'c'._
 
 Rename a column
 
@@ -23,7 +23,12 @@ Rename a column
         @objname = 'tableName.columnName',
         @newname = 'NewColumnName',
         @objtype = 'COLUMN'
- 
+
+Typo in datatype while casting
+
+> ErrorMsg: Operand type clash: MAINTENANCE TOKEN is incompatible with FLOAT
+
+
 Add a column with a default value
 
     alter table MY_TABLE
