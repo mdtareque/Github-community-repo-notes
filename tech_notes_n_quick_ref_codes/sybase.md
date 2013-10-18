@@ -2,7 +2,8 @@
 [Known sybase jConnect bugs](http://www.sybase.com/detail?id=1033283)  
 [All sql operators](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.commands/html/commands/commands98.htm)  
 Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/files/White_Papers/SY-Required-SQL-Changes-for-ASE15-v.1-073009-WP.pdf)  
-[All sybase error codes](http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.infocenter.dc36584.1260/html/iqerror/Errsybcode.htm)  
+[sybase error codes - one liner](http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.infocenter.dc36584.1260/html/iqerror/Errsybcode.htm)  
+[Sybase error code - in detail](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc00462.1510/concepts/con_sqlcode.html)
 [datetime conversion](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc38151.1530/doc/html/san1278453000116.html)  
 
 ### General DDL and DML queries
