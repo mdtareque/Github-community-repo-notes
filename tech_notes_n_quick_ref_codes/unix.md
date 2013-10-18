@@ -34,10 +34,11 @@ Find top 10 directories sorted by size
 ### Parameter Expansion and Default Values 
 [Reference](http://www.debuntu.org/how-to-bash-parameter-expansion-and-default-values).
 
-> _${parameter{_}{*}_:\-_{*}{_}word}_ to use a default value  
-_${parameter{_}{*}_:=_{*}{_}word}_ to assign a default value  
-_${parameter{_}{*}_:?_{*}{_}word}_ to display an error if unset or null  
-_${parameter{_}{*}_:\+_{*}{_}word}_ to use an alternate value
+> ${parameter-word}  to use a default value if variable unset
+> ${parameter:-word} to use a default value if variable unset and empty
+> ${parameter:=word} to assign a default value  
+> ${parameter:?word} to display an error if unset or null  
+> ${parameter:+word} to use an alternate value
 
 ### String substring, pattern matching, substring removal 
 [tldp-string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html).
