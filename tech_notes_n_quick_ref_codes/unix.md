@@ -35,7 +35,7 @@ Find top 10 directories sorted by size
 [Reference](http://www.debuntu.org/how-to-bash-parameter-expansion-and-default-values).
 
 > ${parameter-word}  to use a default value if variable unset  
-> ${parameter:-word} to use a default value if variable unset and empty
+> ${parameter:-word} to use a default value if variable unset and empty  
 > ${parameter:=word} to assign a default value  
 > ${parameter:?word} to display an error if unset or null  
 > ${parameter:+word} to use an alternate value
