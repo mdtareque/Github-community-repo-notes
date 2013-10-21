@@ -77,11 +77,14 @@ Convert a timestamp to date and do the manipulations
 ### Build jenkins job via shell-script
 
 
-token=mtk
-job_name=JobName
-jenkins_url=http://server:port
-jsonDate='json={"parameter":[{"name":"Test","value":"true"}]}&Submit=Build'
+    #!/bin/bash
+    token=mtk
+    job_name=JobName
+    jenkins_url=http://server:port
+    jsonDate='json={"parameter":[{"name":"Test","value":"true"}]}&Submit=Build'
 
-curl --silent -u  ptpfeeds:ptpfeeds --show-error --data $jsonData $jenkins_url/job/$job_name/build?token=$token\&cause=BuiltFromShellScript
+    curl --silent -u  ptpfeeds:ptpfeeds --show-error --data $jsonData $jenkins_url/job/$job_name/build?token=$token\&cause=BuiltFromShellScript
+
+https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin#NodeLabelParameterPlugin-Triggerviascript
 
 ## Commandline navagation keyboard shortcuts
