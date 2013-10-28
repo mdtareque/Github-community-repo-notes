@@ -1,2 +1,10 @@
 Tunneling Variables
 http://www.xml.com/pub/a/2004/03/24/tr.html
+
+
+svn-log-to-xml-to-csv
+1. Generate xml log from svn
+    svn log --xml
+2. Create svn-log.xsl as given in http://stackoverflow.com/a/365338/1135954
+3. Run command as given in http://askubuntu.com/a/175189/56429
+    xsltproc svn-log.xsl svn-log.xml
