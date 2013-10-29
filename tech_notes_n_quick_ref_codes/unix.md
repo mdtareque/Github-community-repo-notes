@@ -186,6 +186,29 @@ SQL syntax color highlighting \[[https://github.com/hoffstein/vim-tsql]\]
     " remove spaces and tabs as well at the end of line automatically while saving
     autocmd BufWritePre * :%s/\s\+$//e
 
+### navigation
+
+Goto last edited line
+other
+<ctrl>+<o> <ctrl> + ﻿<i>
+g; and g,
+gi or '. ( single-quote and a dot)
+
+### copy-paste alignment
+
+Enter :set paste before pasting to avoid long right skewing rows in case of pasting large data from other application.
+
+### Folding
+
+zF{n}- create folding of next{n} lines  
+zF{motion} - creates folding, visual block can be used here  
+
+zc - close the folding  
+zo - open the folding
+
+### Insert current filename into the contents
+
+    <C-r>+% in insert mode
 
 
 
