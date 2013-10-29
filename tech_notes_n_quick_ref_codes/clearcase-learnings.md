@@ -1,5 +1,4 @@
 
-
 ### Clearcase
 
 Info of a label
@@ -32,3 +31,64 @@ http://www.ipnom.com/ClearCase-Commands/mkbrtype.htm
 ### Undo checkout
     
     cleartool -unco fileName.sql
+
+
+Check in
+
+    cleartool ci -c 'comment' fileName.sql
+
+See the checkouts done in current dir
+
+    cleartool lsco
+
+Diff two files or just with the predecessor
+
+    ct diff fileVersion2 fileVersion1
+    ct diff -pred fileVersion2
+
+### Keyword substitution or Keyword expansion
+> $Author:$  
+$Date:$  
+$Header:$  
+$Id:$  
+$Name:$  
+$Revision:$  
+$Source:$
+
+Reference - http://www.ibm.com/developerworks/rational/library/05/1213_diebolt/
+
+### Label
+
+Apply label
+
+    ct mklabel label_name fileName_with_exact_version
+
+Remove a label
+
+    ct rmlabel label_name fileName_with_exact_version
+
+Find procs with labels
+
+    cleartool find . -version 'lbtype(<label>)' -print
+
+
+### View
+
+Create a dynamic view
+
+    ct mkview -tag e573309_view -stgloc -auto
+
+Remove a view
+
+    ct rmview e573309_view
+
+Set a view
+
+    ct setview e573309_view
+
+### Create a new file
+
+    ct co -unr -nc . (parent directory)
+    ct mkelem -nc new_file_name
+    ct ci -c 'comment' new_file_name
+    ct ci -c 'comment' . (parent directory)
