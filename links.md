@@ -16,3 +16,9 @@ http://nvie.com/posts/a-successful-git-branching-model/
 https://www.google.com/webdesigner/
 
 http://gitolite.com/gcs/index.html - git concepts simplified
+
+
+## Must read
+
+http://www.dwheeler.com/essays/fixing-unix-linux-filenames.html  
+http://zeroturnaround.com/rebellabs/the-curious-coders-java-web-frameworks-comparison-spring-mvc-grails-vaadin-gwt-wicket-play-struts-and-jsf/  
