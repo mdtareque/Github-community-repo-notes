@@ -186,6 +186,18 @@ Test for null
     if 0.0 != null
         select 'Yes'
 
+Raiserror
+
+    create proc test_re
+    as
+    begin
+        declare @t char(10)
+        select @t = '123'
+        raiserror 19000 'failed %1!', @t
+    end
+
+
+
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
 - `Alter table` queries are not re-runnable.
