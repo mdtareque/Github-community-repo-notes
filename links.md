@@ -17,6 +17,11 @@ https://www.google.com/webdesigner/
 
 http://gitolite.com/gcs/index.html - git concepts simplified
 
+http://www.willa.me/2013/11/the-six-most-common-species-of-code.html
+
+### codepen
+
+http://codepen.io/lbebber/pen/xrwja text filling with water
 
 ## Must read
 
