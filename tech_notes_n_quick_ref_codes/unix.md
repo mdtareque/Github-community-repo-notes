@@ -210,8 +210,6 @@ zo - open the folding
 
     <C-r>+% in insert mode
 
-
-
 ### Build jenkins job via shell-script
 
 
@@ -226,3 +224,10 @@ zo - open the folding
 https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin#NodeLabelParameterPlugin-Triggerviascript
 
 ## Commandline navagation keyboard shortcuts
+
+
+## BCP
+
+    bcp DBNAME..tableName out /tmp/testBcp.out -Uuser -Ppass -Sserver -c -t,
+    bcp DBNAME..tableName in /tmp/testBcp.out -Uuser -Ppass -Sserver -c -t,
+    
