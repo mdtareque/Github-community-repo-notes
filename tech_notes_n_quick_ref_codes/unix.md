@@ -231,3 +231,5 @@ https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin#NodeLabel
     bcp DBNAME..tableName out /tmp/testBcp.out -Uuser -Ppass -Sserver -c -t,
     bcp DBNAME..tableName in /tmp/testBcp.out -Uuser -Ppass -Sserver -c -t,
     
+`-c` is for 
+> Performs the operation using a character data type. This option does not prompt for each field; it uses char as the storage type, without prefixes and with \t (tab character) as the field separator and \r\n (newline character) as the row terminator. -c is not compatible with -w.
