@@ -24,3 +24,10 @@ Heap core dump and analysis tools
 http://docs.oracle.com/javase/7/docs/webnotes/tsg/TSG-VM/html/memleaks.html  
 http://docs.oracle.com/javase/7/docs/technotes/guides/visualvm/jmx_connections.html  
 http://docs.oracle.com/javase/7/docs/webnotes/tsg/TSG-VM/html/tooldescr.html#gblfh  
+
+
+Info
+
+http://avricot.com/blog/index.php?post/2010/05/03/Get-started-with-java-JVM-memory-%28heap%2C-stack%2C-xss-xms-xmx-xmn...%29  
+http://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html  
+http://javahowto.blogspot.in/2006/06/6-common-errors-in-setting-java-heap.html  
