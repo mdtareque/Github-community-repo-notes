@@ -1,0 +1,10 @@
+Legends C=Ctrl, S=Shift
+
+## Excel
+
+C+; Insert current date
+C+S+: Insert current time
+C+S+L: Apply Filter on selected column
+
+
+
