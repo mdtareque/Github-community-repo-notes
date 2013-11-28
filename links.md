@@ -19,6 +19,8 @@ http://gitolite.com/gcs/index.html - git concepts simplified
 
 http://www.willa.me/2013/11/the-six-most-common-species-of-code.html
 
+http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html why GNU Grep is fast
+
 ### codepen
 
 http://codepen.io/lbebber/pen/xrwja text filling with water
@@ -27,3 +29,4 @@ http://codepen.io/lbebber/pen/xrwja text filling with water
 
 http://www.dwheeler.com/essays/fixing-unix-linux-filenames.html  
 http://zeroturnaround.com/rebellabs/the-curious-coders-java-web-frameworks-comparison-spring-mvc-grails-vaadin-gwt-wicket-play-struts-and-jsf/  
+
