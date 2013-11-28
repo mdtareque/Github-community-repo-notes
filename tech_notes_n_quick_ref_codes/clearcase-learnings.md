@@ -93,5 +93,9 @@ Set a view
     ct ci -c 'comment' . (parent directory)
 
 
-clearcase find command examles
-http://www-01.ibm.com/support/docview.wss?uid=swg21124425
+clearcase find command examles  
+http://www-01.ibm.com/support/docview.wss?uid=swg21124425  
+clearcase general info on config spec, comments  
+http://publib.boulder.ibm.com/infocenter/cchelp/v7r0m0/index.jsp?topic=/com.ibm.rational.clearcase.cc_ref.doc/topics/config_spec.htm  
+isql  
+http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc35456.1550/html/ocspsunx/X33477.htm  
