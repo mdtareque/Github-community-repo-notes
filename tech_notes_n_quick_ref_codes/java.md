@@ -24,7 +24,7 @@ Heap core dump and analysis tools
 http://docs.oracle.com/javase/7/docs/webnotes/tsg/TSG-VM/html/memleaks.html  
 http://docs.oracle.com/javase/7/docs/technotes/guides/visualvm/jmx_connections.html  
 http://docs.oracle.com/javase/7/docs/webnotes/tsg/TSG-VM/html/tooldescr.html#gblfh  
-
+https://blog.codecentric.de/en/2008/07/memory-analysis-part-1-obtaining-a-java-heapdump/
 
 Info
 
