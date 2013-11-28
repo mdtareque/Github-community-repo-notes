@@ -210,6 +210,10 @@ zo - open the folding
 
     <C-r>+% in insert mode
 
+### Folding
+
+http://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun
+
 ### Build jenkins job via shell-script
 
 
