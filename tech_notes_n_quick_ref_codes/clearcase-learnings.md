@@ -1,4 +1,3 @@
-
 ### Clearcase
 
 Info of a label
@@ -76,15 +75,15 @@ Find procs with labels
 
 Create a dynamic view
 
-    ct mkview -tag e573309_view -stgloc -auto
+    ct mkview -tag view_name -stgloc -auto
 
 Remove a view
 
-    ct rmview e573309_view
+    ct rmview view_name
 
 Set a view
 
-    ct setview e573309_view
+    ct setview view_name
 
 ### Create a new file
 
@@ -92,3 +91,7 @@ Set a view
     ct mkelem -nc new_file_name
     ct ci -c 'comment' new_file_name
     ct ci -c 'comment' . (parent directory)
+
+
+clearcase find command examles
+http://www-01.ibm.com/support/docview.wss?uid=swg21124425
