@@ -60,10 +60,21 @@ Output - `0x00503412`
     sp_helpjoins table1, table2
     sp_helpkey table_name
 
+## Permission
+
 ### Grant exec permission to proc
 
     GRANT EXECUTE on proc_name
     to group_name
+
+### grant syntax
+
+    grant insert,delete on tbl_name to user1, user2
+    grant select on tbl_name to public
+    
+### revoke permission
+
+    revoke all on tbl_name from public
 
 ### Only owner of tables can execute these
 
