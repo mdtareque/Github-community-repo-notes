@@ -5,6 +5,8 @@ Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/fi
 [sybase error codes - one liner](http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.infocenter.dc36584.1260/html/iqerror/Errsybcode.htm)  
 [Sybase error code - in detail](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc00462.1510/concepts/con_sqlcode.html)
 [datetime conversion](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc38151.1530/doc/html/san1278453000116.html)  
+[locking and isolation](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20021_1251/html/locking/locking9.htm)  
+[locking](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20021_1251/html/locking/locking88.htm)  
 
 ### General DDL and DML queries
 Quick DDL
