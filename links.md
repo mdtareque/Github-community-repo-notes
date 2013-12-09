@@ -29,4 +29,4 @@ http://codepen.io/lbebber/pen/xrwja text filling with water
 
 http://www.dwheeler.com/essays/fixing-unix-linux-filenames.html  
 http://zeroturnaround.com/rebellabs/the-curious-coders-java-web-frameworks-comparison-spring-mvc-grails-vaadin-gwt-wicket-play-struts-and-jsf/  
-
+http://viralpatel.net/blogs/download/design-pattern-scard.pdf  
