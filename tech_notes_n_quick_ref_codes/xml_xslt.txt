@@ -1,6 +1,7 @@
 Tunneling Variables
 http://www.xml.com/pub/a/2004/03/24/tr.html
 
+http://www.abbeyworkshop.com/howto/xslt/xslt-split-values/index.html
 
 svn-log-to-xml-to-csv
 1. Generate xml log from svn
