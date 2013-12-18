@@ -7,6 +7,7 @@ Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/fi
 [datetime conversion](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc38151.1530/doc/html/san1278453000116.html)  
 [locking and isolation](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20021_1251/html/locking/locking9.htm)  
 [locking](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20021_1251/html/locking/locking88.htm)  
+[sybase client/server](http://manuals.sybase.com/onlinebooks/group-cn/cng1250e/osref/@Generic__BookTextView/328)  
 
 ### General DDL and DML queries
 Quick DDL
