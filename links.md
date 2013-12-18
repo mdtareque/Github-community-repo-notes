@@ -23,6 +23,10 @@ http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html why G
 
 http://minireference.com/blog/linear-algebra-tutorial/  
 
+### git
+
+https://www.atlassian.com/git/workflows  
+
 ### python
 
 http://www.rafekettler.com/magicmethods.html  
