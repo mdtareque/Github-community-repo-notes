@@ -194,6 +194,31 @@ Get the users group and access level on a table.
 
 Options set can be seen by _@@options_ that returns a [hex output](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.sqlug/html/sqlug/sqlug611.htm).
 
+
+### space usage
+
+    sp_spaceused tableName, [1]
+
+### group by
+
+	create table t (name char(10), ctry char(10), age int)
+	insert into t values('a', 'IN', 22)
+	insert into t values('b', 'IN', 24)
+	insert into t values('c', 'IN', 30)
+	insert into t values('aa', 'JP', 32)
+	insert into t values('ab', 'JP', 34)
+	insert into t values('ac', 'CN', 20)
+	select * from t
+	select ctry, count(*) as #residents, avg(age) as 'avg age'
+	from t
+	group by ctry
+	having(count(name) > 1)
+
+	ctry #residents avg age
+	"IN " 3 25
+	"JP " 2 33
+
+
 ### Testing
 
 Test for null
