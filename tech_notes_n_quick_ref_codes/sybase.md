@@ -268,6 +268,33 @@ Run TranA first in one sql session and TranB in another sql session. TranB will 
 TranA would deadlock now.
 
 
+### Trick with  bits
+
+Check whether db is offline, the 4th position bit from LSB of a field in master table says whether db is offline or not.
+
+    select status2 & 16 from master..sysdatabases where name = 'db-name'
+
+http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.help.ase_15.0.tables/html/tables/tables28.htm
+
+### display execution time of a sql stmts
+
+    select @dt_start=getdate()
+      <main-sql-stmts>
+    select @dt_end = getdate()
+    select @execTime = right ('00' + convert (varchar, datediff(hour, @dt_start, @dt_end)),2) + ':' +
+                right ('00' + convert (varchar, datediff(minute, @dt_start, @dt_end) - datediff(hour, @dt_start, @dt_end)*60),2) + ':' +
+                right ('00' + convert (varchar, datediff(second, @dt_start, @dt_end) - datediff(minute, @dt_start, @dt_end)*60), 2) + 's'
+    print "Execution time for main statement %3!", @execTime 
+
+### check locking scheme for a table
+
+    select name, 'table uses...' = case (sysstat2 & 57344)
+    when 8192 then 'allpages locking scheme'
+    when 16384 then 'datapages locking scheme'
+    when 32768 then 'datarows locking scheme'
+    end
+    from sysobjects where type = "U"
+
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
 - `Alter table` queries are not re-runnable.
