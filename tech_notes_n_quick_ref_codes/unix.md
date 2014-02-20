@@ -210,28 +210,58 @@ zF{motion} - creates folding, visual block can be used here
 zc - close the folding  
 zo - open the folding
 
+http://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun
+
+
 ### Insert current filename into the contents
 
     <C-r>+% in insert mode
 
-### Folding
-
-http://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun
-
 ### Build jenkins job via shell-script
-
 
     #!/bin/bash
     token=mtk
     job_name=JobName
     jenkins_url=http://server:port
     jsonDate='json={"parameter":[{"name":"Test","value":"true"}]}&Submit=Build'
-
     curl --silent -u  user:pass --show-error --data $jsonData $jenkins_url/job/$job_name/build?token=$token\&cause=BuiltFromShellScript
 
 https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin#NodeLabelParameterPlugin-Triggerviascript
 
+
+### Get lines/data only present in 2nd file that are not in file1, based on 1st column of file
+
+    awk 'FNR==NR{a[$1];next};!($1 in a)' file1 file2  > /tmp/awkDiff
+    comm -3 file1 file3
+
+### Java Thread faq on deprecated methods http://docs.oracle.com/javase/7/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
+Unix find number of lines in compressed file
+
+    $ zcat file.gz | wc
+    $ gunzip -c file.gz | wc
+
+### Coding standards
+
+https://www.owasp.org/index.php/Top_10_2010-Main
+
+tools 
+Firefox edit cookie, TamperData add-ons
+HTTPProxy, fiddler
+
 ## Commandline navagation keyboard shortcuts
+http://www.math.utah.edu/docs/info/features_7.html
+
+ESC + .(dot)  gives you the last argument of the last command
+Ctrl + A      Go to the beginning of the line you are currently typing on 
+Ctrl + E      Go to the end of the line you are currently typing on
+Ctrl + U      Clears the line before the cursor position. If you are at the end of the line, clears the entire line.
+Ctrl + H      Same as backspace
+Ctrl + W      Delete the word before the cursor 
+Ctrl + K      Clear the line after the cursor
+Ctrl + T      Swap the last two characters before the cursor 
+Alt/Esc + T   Swap the last two words before the cursor 
+Alt + F       Move cursor forward one word on the current line 
+Alt + B       Move cursor backward one word on the current line
 
 
 ## BCP
