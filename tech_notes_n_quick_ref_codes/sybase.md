@@ -237,6 +237,36 @@ Raiserror
     end
 
 
+### Deadlock creation
+
+Gather some data for playing deadlock-deadlock
+
+	select top 10 * into t1 from SOME_TABLE
+	select top 10 * into t2 from SOME_TABLE
+
+Transaction 1 (TranA) 	
+1. begin tran TranA
+2. select * from t1 holdlock
+3. waitfor delay "00:00:05"
+4. select * from t2 holdlock
+5. commit tran TranA
+
+Transaction 2 (TranB)
+1. begin tran TranB
+2. update t2 set dt_trd = '20 May 2013'
+3. update t1 set dt_trd = '30 May 2013'
+4. commit tran TranB
+
+1. Deadlock TranA
+Run TranA first in one sql session and TranB in another sql session. TranB will encounter a deadlock
+
+2. Deadlock TranB
+1. Run ?TranA line by line till line 2.
+2. In another session run TranB till line 2.
+3. Then come back to TranA and run line 4.
+4. Come back to TranB and run line 3.
+TranA would deadlock now.
+
 
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
