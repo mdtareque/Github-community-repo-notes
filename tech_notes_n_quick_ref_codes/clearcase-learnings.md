@@ -99,3 +99,18 @@ clearcase general info on config spec, comments
 http://publib.boulder.ibm.com/infocenter/cchelp/v7r0m0/index.jsp?topic=/com.ibm.rational.clearcase.cc_ref.doc/topics/config_spec.htm  
 isql  
 http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc35456.1550/html/ocspsunx/X33477.htm  
+
+
+### New file created on Branch leaving directory unsynced. Directory merge needed.
+
+Set config-spec to main/latest
+Find what requires to be merged, if any
+
+    ct findmerge . -typ d -fver '{lbtype(label-name)}' -whynot -print
+    Needs Merge "." [to ver from ver base ver]
+
+If anything found with 'Needs Merge', then run the below to actually merge
+
+    ct findmerge . -typ d -fver '{lbtype(label-name)}'  -merge  -abort -exec 'cleartool ci -nc $CLEARCASE_PN'
+
+Add comments, and check the logfile created given in output. Re-run step 1 to ensure nothing is remaining.
