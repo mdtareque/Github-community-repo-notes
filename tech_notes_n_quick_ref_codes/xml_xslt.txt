@@ -9,3 +9,83 @@ svn-log-to-xml-to-csv
 2. Create svn-log.xsl as given in http://stackoverflow.com/a/365338/1135954
 3. Run command as given in http://askubuntu.com/a/175189/56429
     xsltproc svn-log.xsl svn-log.xml
+
+
+-----
+
+** Extracting data from a xml file using a xslt transformation and displaying as plain text
+
+data.xml
+
+{code}
+<?xml version="1.0"?>
+<log>
+    <logentry revision="10616">
+        <author>author1__nickname1 author2__nickname2</author>
+        <date>2013-10-01T17:46:41.274930Z</date>
+        <msg>Some comment.</msg>
+    </logentry>
+    <logentry revision="10592">
+        <author>Another-Author</author>
+        <date>2013-09-30T09:05:46.808966Z</date>
+        <msg>Another Comment</msg>
+    </logentry>
+</log>
+{code}
+
+transformer.xml
+
+{code}
+<xsl:stylesheet version="1.0"
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:output method="text" encoding="iso-8859-1"/>
+
+<xsl:strip-space elements="*" />
+
+<xsl:template match="/">
+    <!-- Only for first entry -->
+    <xsl:call-template name="split">
+        <xsl:with-param name="list"><xsl:value-of select="/log/logentry/author" /></xsl:with-param>
+    </xsl:call-template>
+
+   <!-- working : for each tags entry
+   <xsl:for-each select="/log/logentry">
+        <xsl:call-template name="split">
+            <xsl:with-param name="list"><xsl:value-of select="author" /></xsl:with-param>
+        </xsl:call-template>
+    </xsl:for-each>
+    -->
+</xsl:template>
+
+<xsl:template name="split">
+    <xsl:param name="list" />
+<!-- First split on space, then on __ -->
+    <xsl:variable name="newlist" select="concat(normalize-space($list), ' ')" />
+    <xsl:variable name="first" select="substring-before($newlist, ' ')" />
+    <xsl:variable name="remaining" select="substring-after($newlist, ' ')" />
+    <!-- <xsl:value-of select="$first" /> -->
+Author: <id><xsl:value-of select="substring-before($first,'__')" /></id>
+NickName: <id><xsl:value-of select="substring-after($first,'__')" /></id>
+<xsl:text>&#xa;</xsl:text>
+    <!-- <id><xsl:value-of select="$remaining" /></id> -->
+    <xsl:if test="$remaining != ''">
+        <xsl:call-template name="split">
+             <xsl:with-param name="list" select="$remaining" />
+        </xsl:call-template>
+    </xsl:if>
+</xsl:template>
+
+</xsl:stylesheet>
+{code}
+
+Execution
+
+{code}
+$ xsltproc transformer.xsl data.xml
+
+Author: author1
+NickName: nickname1
+
+Author: author2
+NickName: nickname2
+{code}
