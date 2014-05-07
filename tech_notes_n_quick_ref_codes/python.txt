@@ -1,0 +1,20 @@
+tutorials
+learnpythonthehardway
+diveintopython
+
+installing/uninstalling python softwares/modules
+learnpythonthehardway.org/book/ex46.html
+
+python -m pip install -U pip
+pip install distribute
+pip install nose
+pip install virtualenv
+
+or down tar.gz, extract, cd to dir and run
+python setup.py install
+
+or 
+python setup.py install --record files.txt
+to uninstall,
+delete each file in files.txt or
+pip uninstall <name>
