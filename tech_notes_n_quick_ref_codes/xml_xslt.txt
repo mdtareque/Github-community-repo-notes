@@ -11,6 +11,13 @@ svn-log-to-xml-to-csv
     xsltproc svn-log.xsl svn-log.xml
 
 
+other links
+Command from:
+http://askubuntu.com/questions/174143/convert-xml-to-csv-shell-command-line
+xslt file as is from:
+http://stackoverflow.com/questions/365312/xml-to-csv-using-xslt
+
+
 -----
 
 ** Extracting data from a xml file using a xslt transformation and displaying as plain text
