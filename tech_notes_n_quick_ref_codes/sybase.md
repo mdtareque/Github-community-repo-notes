@@ -218,6 +218,27 @@ Options set can be seen by _@@options_ that returns a [hex output](http://infoce
 	"IN " 3 25
 	"JP " 2 33
 
+### globals and test
+
+    db_id(), db_name(), @@procid, @@spid
+    -- check for existance of a required temp table
+    if (object_id("SOMETABLE") is null)
+
+### curosr
+
+    DECLARE print_debug_vals CURSOR FOR
+    SELECT debug_vals
+    FROM #tmp
+    
+    OPEN print_debug_vals
+    FETCH print_debug_vals INTO @msgStr
+      
+    WHILE @@sqlstatus = 0
+    BEGIN
+    FETCH print_debug_vals INTO @id_md
+    END
+    CLOSE print_debug_vals
+
 
 ### Testing
 
