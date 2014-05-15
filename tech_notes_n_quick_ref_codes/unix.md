@@ -84,6 +84,10 @@ Convert a timestamp to date and do the manipulations
 
     awk 'FNR==NR{a[$1];next};!($1 in a)' file1 file2  > /tmp/awkDiff
 
+### scp
+
+    scp /tmp/file.txt user@host:remote-path-to-store
+
 
 ## Vim
 
@@ -217,7 +221,8 @@ http://www.linux.com/learn/tutorials/442438-vim-tips-folding-fun
 
     <C-r>+% in insert mode
 
-### Build jenkins job via shell-script
+
+## Build jenkins job via shell-script
 
     #!/bin/bash
     token=mtk
@@ -234,7 +239,8 @@ https://wiki.jenkins-ci.org/display/JENKINS/NodeLabel+Parameter+Plugin#NodeLabel
     awk 'FNR==NR{a[$1];next};!($1 in a)' file1 file2  > /tmp/awkDiff
     comm -3 file1 file3
 
-### Java Thread faq on deprecated methods http://docs.oracle.com/javase/7/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
+### Java Thread faq on deprecated methods 
+http://docs.oracle.com/javase/7/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html
 Unix find number of lines in compressed file
 
     $ zcat file.gz | wc
