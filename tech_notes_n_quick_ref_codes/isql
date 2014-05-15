@@ -1,0 +1,18 @@
+http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc35456.1550/html/ocspsunx/X33477.htm
+Command                 Description
+>                       Redirects command output to a file. File is overwritten if it exists.
+>>                      Redirects command output to a file. The output is appended to the file if the file already exists.
+|                       Pipes the output of a command to an external application.
+reset                   Clears the query buffer.
+quit or exit            Exits from isql.
+vi                      Calls the editor.
+!! command              Executes an operating system command.
+:r filename             Reads an operating system file.
+:R filename             Reads and displays an operating system file.
+use dbname              Changes the current database to dbname.
+-b                      commandline arg to disable headers
+set nocount on          to turn off rowcount info
+
+sp_helpuser edgtran
+sp_helpuser edg_user
+sp_displaylogin
