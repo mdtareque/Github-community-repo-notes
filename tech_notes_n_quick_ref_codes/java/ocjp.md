@@ -28,3 +28,6 @@ Interfaces
 - must not be static
 - Because interface methods are abstract, they cannot be marked final, strictfp or native.
 - public modifier is required if we want interface to have public access
+
+A private method can't be inherited hence can't be overridden by a subclass
+Subclass can see protected members only through inheritance
