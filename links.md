@@ -42,3 +42,8 @@ http://zeroturnaround.com/rebellabs/the-curious-coders-java-web-frameworks-compa
 http://viralpatel.net/blogs/download/design-pattern-scard.pdf  
 http://samizdat.mines.edu/howto/HowToBeAProgrammer.html  
 http://regex.alf.nu/  Regex test and learn  
+
+XSS game and solution
+https://xss-game.appspot.com/
+http://secchal.blogspot.in/2014/05/xss-game-1.html
+https://www.google.com/about/appsecurity/learning/xss/index.html
