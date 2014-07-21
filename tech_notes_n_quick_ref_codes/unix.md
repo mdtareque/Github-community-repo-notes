@@ -68,6 +68,30 @@ Find top 10 directories sorted by size
     find . -type f -name *.pom -mtime -1 | xargs ls -lrt {}
 
 
+## Bash Navigation
+### HEADS AND TAILS
+ever wanted to copy a few files in the same directory, all of which have same 
+long prefix, like: cp /usr/local/etc/apache/file1.txt /usr/local/etc/apache/file2.txt
+you can grap and reuse that prefix. It's named !#:1:h like:
+cp /usr/local/etc/apache/file1.txt !#:1:h/file2.txt !#:1:h/file3.txt
+
+### BASH HISTORY SEARCH AND REPLACE
+      ^string1^string2^ Quick substitution. Repeat the last command, replacing string1 with
+      string2. Equivalent to ``!!:s/string1/string2/''
+
+### MORE BASH COMMAND LINE TRICKERY (messing with the history)
+make a directory then move into it:
+mkdir cgi-bin; cd !#$ 
+!#$ is shorthand for "the first word of this command". If I wanted to pick the third word
+out of the previous command, that would be: !!:3 (don't forget there is a zeroth word).
+
+### execute the most recent command the contains the following string: 
+!?string
+
+### globally search replace on the previous line:
+!!:gs/old/new/
+
+
 ### Date manipulation
 Add and subtract number of days from a given date
 
