@@ -62,6 +62,7 @@ guidelines and cmd to install missing dependancy in output of mvn
 Other useful commands
 
     > mvn eclipse:eclipse -DdownloadSources=true
-    > mvn dependency:resolve -Dclassifier=sources
-    > mvn dependency:resolve -Dclassifier=javadoc
+    > mvn dependency:resolve -Dclassifier=sources     download sources
+    > mvn dependency:resolve -Dclassifier=javadoc     download javadocs
+    > mvn <goals> -rf :project4                       just build from project4 and onwards
 
