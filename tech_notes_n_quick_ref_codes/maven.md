@@ -58,3 +58,10 @@ guidelines and cmd to install missing dependancy in output of mvn
 	for artifact:
 		com.mtk.test:projA:pom:1.4.2
 
+
+Other useful commands
+
+    > mvn eclipse:eclipse -DdownloadSources=true
+    > mvn dependency:resolve -Dclassifier=sources
+    > mvn dependency:resolve -Dclassifier=javadoc
+
