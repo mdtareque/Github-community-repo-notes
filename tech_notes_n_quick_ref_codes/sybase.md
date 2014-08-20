@@ -340,7 +340,7 @@ Good query and plan example, if B's indexes could completely contained within A'
             B\
             b\
         EXISTS TABLE : nested iteration.\
-        Index : DEAL_EVENT_surrogate_KEY\
+        Index : B_surrogate_KEY\
         Forward scan.\
         Positioning by key.\
         Index contains all needed columns. Base table will not be read.\
