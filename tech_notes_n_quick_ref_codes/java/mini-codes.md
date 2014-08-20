@@ -145,7 +145,26 @@ http://stackoverflow.com/questions/6994944/connect-to-a-https-site-with-a-given-
     
 compareDouble
 
-  double EPSILON = 0.000001;
-  public boolean compareDouble(double a, double b){
-         return a == b || Math.abs(a - b) < EPSILON;
-  }
+   double EPSILON = 0.000001;
+   public boolean compareDouble(double a, double b){
+          return a == b || Math.abs(a - b) < EPSILON;
+   }
+   
+hasNonNullIntersection
+
+    public static <K> boolean hasNonNullIntersection( Set<K> master, Set<K> child ) {
+    final int mSize = master == null ? 0 : master.size();
+    final int cSize = child == null ? 0 : child.size();
+    if ( cSize != 0 && mSize != 0 )
+    {
+            final Set<K> smallContainer = mSize < cSize ? master : child;
+            final Set<K> largeContainer = ( smallContainer == master ) ? child : master;
+            for ( K pk : smallContainer )
+            {
+                    if ( largeContainer.contains( pk ) )
+                            return true;
+            }
+    }  
+    return false;
+    }
+    
