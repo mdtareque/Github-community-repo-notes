@@ -316,6 +316,39 @@ http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.help.ase_15.0.t
     end
     from sysobjects where type = "U"
 
+## query optiomzation
+
+
+Good query and plan example, if B's indexes could completely contained within A's, then you should see
+
+
+
+    set showplan on
+    set statistics io, time on
+    go
+    SELECT * FROM A a    WHERE
+        (dt_create >=      '4 Apr 2013' AND dt_create < '5 Apr 2013')
+    AND id_ NOT IN ( SELECT id_evt
+                           FROM   B  de
+                           WHERE  a.id_ = b.id_ )
+
+> STEP 1\
+        The type of query is SELECT.\
+        Evaluate Ungrouped ANY AGGREGATE.\
+\
+        FROM TABLE\
+            B\
+            b\
+        EXISTS TABLE : nested iteration.\
+        Index : DEAL_EVENT_surrogate_KEY\
+        Forward scan.\
+        Positioning by key.\
+        Index contains all needed columns. Base table will not be read.\
+        Keys are:\
+            id_  ASC\
+        Using I/O Size 2 Kbytes for index leaf pages.\
+        With LRU Buffer Replacement Strategy for index leaf pages.\
+
 ## Sybase general and Stored procedures facts
 - TEXT datatype variable can't be passed as procedure parameters. A temp table should be included for passing the data between procedures.
 - `Alter table` queries are not re-runnable.
