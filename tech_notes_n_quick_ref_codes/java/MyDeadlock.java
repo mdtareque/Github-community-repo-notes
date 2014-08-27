@@ -49,3 +49,23 @@ public class MyDeadlock {
         }
     }
 }
+
+/*
+Sample output
+JavaUNIX
+JavaUNIX
+JavaUNIX
+JavaUNIX
+The following threads are deadlocked:
+"My Thread 2" Id=10 BLOCKED on java.lang.String@3d4b7453 owned by "My Thread 1" Id=9
+	at MyDeadlock$2.run(MyDeadlock.java:28)
+	-  blocked on java.lang.String@3d4b7453
+	-  locked java.lang.String@67f1fba0
+
+
+"My Thread 1" Id=9 BLOCKED on java.lang.String@67f1fba0 owned by "My Thread 2" Id=10
+	at MyDeadlock$1.run(MyDeadlock.java:16)
+	-  blocked on java.lang.String@67f1fba0
+	-  locked java.lang.String@3d4b7453
+
+*/
