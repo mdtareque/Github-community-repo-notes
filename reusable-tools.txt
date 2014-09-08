@@ -14,3 +14,8 @@ highcharts.com : Highcharts JS, the JavaScript charting framework
 Epic links : things to know
 =======
 http://www.quirksmode.org/dom/intro.html
+
+
+Personal Life Display
+=======
+http://nbviewer.ipython.org/github/chrisalbon/code_py/blob/master/matplotlib_map_your_google_data.ipynb
