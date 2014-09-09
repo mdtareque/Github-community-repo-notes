@@ -114,6 +114,11 @@ other
 g; and g,
 gi or '. ( single-quote and a dot)
 
+## Synchronized scrolling in splitted windows
+
+    :syncbind
+
+
 ### copy-paste alignment
 
 Enter :set paste before pasting to avoid long right skewing rows in case of pasting large data from other application.
