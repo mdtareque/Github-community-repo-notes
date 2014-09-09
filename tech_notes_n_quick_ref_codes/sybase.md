@@ -59,6 +59,13 @@ Output - `0x00503412`
     select stuff('12345',2,1,'-') -- "1-345"
     select stuff('12345',2,1,'---') -- "1---345"
 
+### sp_recompile
+
+to recompile a stored proc, or call it with recompile to generate a new plan each time as
+
+    exec sp_name with recompile
+
+
 ### Any User can execute these
 
     sp_helpjoins table1, table2
@@ -358,3 +365,4 @@ Good query and plan example, if B's indexes could completely contained within A'
 - Column identifier name maximum length is 30.
 - Error for `if null <> null select ''` - 'Invalid operator for datatype op: != type: VOID TYPE', shows `<>` is replaced by `!=` internally
 - When a `char` or `unichar` value is declared to allow nulls, Adaptive Server stores it internally as `varchar` or `univarchar`. And datalength of any `NULL` data returns `NULL`.
+- When you want to futher join on other tables from a field that we get from a table from a outer join, you need to use outer join on further from the inner table again. Or else the error is 'The table 'xyz' is an inner member of an outer-join clause. This is not allowed if the table aslo participates in a regular join clause.'
