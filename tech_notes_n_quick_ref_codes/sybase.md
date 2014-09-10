@@ -366,3 +366,4 @@ Good query and plan example, if B's indexes could completely contained within A'
 - Error for `if null <> null select ''` - 'Invalid operator for datatype op: != type: VOID TYPE', shows `<>` is replaced by `!=` internally
 - When a `char` or `unichar` value is declared to allow nulls, Adaptive Server stores it internally as `varchar` or `univarchar`. And datalength of any `NULL` data returns `NULL`.
 - When you want to futher join on other tables from a field that we get from a table from a outer join, you need to use outer join on further from the inner table again. Or else the error is 'The table 'xyz' is an inner member of an outer-join clause. This is not allowed if the table aslo participates in a regular join clause.'
+- If table schema is updated, stored procs referencing it needs to be recompiled in 12.5 or else there will be a error. Or incase the columns were added, a `select *` will still give old list of columns
