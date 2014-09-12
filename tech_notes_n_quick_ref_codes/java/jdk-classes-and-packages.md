@@ -30,7 +30,10 @@ java.text.NumberFormat
  NumberFormat.getCurrencyInstance()
  NumberFormat.getCurrencyInstance(Locale)
 
-java.util.Queue<?>
+Collection<E> is an interface extends Iterable<E>
+java.util.Queue<E> is an interface extends Colelction<E>
+java.util.List<E> is an interface extends Colelction<E>
+java.util.ArrayList<E> is a class, implements RandomAccess, Cloneable, java.io.Serializable
 
 </pre>
 
@@ -48,4 +51,4 @@ Enums
 
 Generics
 - cannot perform `instanceof` check against a parameterized type due to type erasure.
-- 
+- if <? super SomeClass> or <? extends SomeClass> is used, casting is necessary.
