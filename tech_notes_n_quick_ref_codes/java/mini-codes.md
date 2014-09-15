@@ -168,3 +168,23 @@ hasNonNullIntersection
     return false;
     }
     
+
+Check jvm params default value
+
+    java -XX:+PrintFlagsFinal -version 
+
+
+Check runtime params programmatically
+
+    import java.lang.management.ManagementFactory;
+    import java.lang.management.RuntimeMXBean;
+    import java.util.List;
+    ...
+    public static void runtimeParameters() {
+    	RuntimeMXBean bean = ManagementFactory.getRuntimeMXBean();
+		List<String> aList = bean.getInputArguments();
+		
+		for (int i = 0; i < aList.size(); i++) {
+			System.out.println( aList.get( i ) );
+		}
+	}
