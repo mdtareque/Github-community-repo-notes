@@ -172,7 +172,7 @@ hasNonNullIntersection
 Check jvm params default value
 
     java -XX:+PrintFlagsFinal -version 
-
+    java -XshowSettings:all    /* java7 */
 
 Check runtime params programmatically
 
