@@ -39,7 +39,8 @@ java.util.ArrayList<E> is a class, implements RandomAccess, Cloneable, java.io.S
 
 tricky points
 - consutructor of an abstract class can be private
-- 
+- The construction for(:) can only iterate over an array or an instance of java.lang.Iterable
+
 Interfaces
 - are implicitly abstract, you cannot apply `final`, `strictfp` or `native`
 - methods are implicitly `public abstract`
