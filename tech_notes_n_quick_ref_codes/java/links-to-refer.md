@@ -6,3 +6,6 @@ http://docs.oracle.com/javaee/6/tutorial/doc/bnafe.html
 
 reflection
 http://docs.oracle.com/javase/tutorial/reflect/index.html
+
+object class explanation in detail
+http://docs.oracle.com/javase/tutorial/java/IandI/objectclass.html
