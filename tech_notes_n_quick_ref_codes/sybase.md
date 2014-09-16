@@ -325,6 +325,7 @@ http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.help.ase_15.0.t
 
 ## query optiomzation
 
+http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20023_1251/html/optimizer/X17067.htm
 
 Good query and plan example, if B's indexes could completely contained within A's, then you should see
 
