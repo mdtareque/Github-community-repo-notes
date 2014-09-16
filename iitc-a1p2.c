@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+// http://mathforum.org/library/drmath/view/56383.html
 // Function to calculate x raised to the power y
 long power(int x, unsigned int y) {
     long temp;
