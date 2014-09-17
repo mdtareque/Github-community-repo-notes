@@ -116,7 +116,7 @@ gi or '. ( single-quote and a dot)
 
 ## Synchronized scrolling in splitted windows
 
-    :syncbind
+    :set scrollbind
 
 
 ### copy-paste alignment
