@@ -23,6 +23,8 @@ http://lists.freebsd.org/pipermail/freebsd-current/2010-August/019310.html why G
 
 http://minireference.com/blog/linear-algebra-tutorial/  
 
+http://www.adobe.com/devnet/html5/articles/css-everything-is-global-and-how-to-deal-with-it.html
+
 ### git
 
 https://www.atlassian.com/git/workflows  
