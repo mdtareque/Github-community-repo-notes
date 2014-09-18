@@ -13,7 +13,7 @@ int main() {
         if(n > max) {
         	max2 = max;
         	max = n;
-        } else if( max2 == -1) {
+        } else if( ((max2 == -1) || (n > max2 && n < max)) && n != max ) { // to cater case 22 22 5 3 2 -1
         	max2 = n;
         }
     };
