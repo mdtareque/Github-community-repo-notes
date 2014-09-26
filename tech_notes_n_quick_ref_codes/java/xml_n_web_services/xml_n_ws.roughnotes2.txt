@@ -1,0 +1,99 @@
+aspect in aop : filter in servlet&jsp : handler in soap
+
+
+apache cxf is extension of spring core. everything is treated as beans
+
+jboss has cxf and hibernate jar pre configured
+
+tomee is extension of tomcat with support for ejb, cxf, etc. It's Tomcat for java ee
+
+RESTFul service
+speaks in terms of resource
+all in urls/uris
+
+Not any standard for ~wsdl file
+WADL  Web application Definition Language (Jersey creates this) 
+RSDL Restful DL
+
+
+first some different code other than jaxrs
+
+Product class
+
+annotation to be used for JAXB (only option) to convert java to xml.
+@ApplicationScoped // CDI Context Time Dependency Injection (Alternative to spring DI)
+ProductDao
+ProductResource
+MyRest
+
+http://localhost:8080/RSApp/rest/application.wadl
+
+http://code.google.com/p/rest-client/
+
+on client side set http header
+'Accept: application/json'
+to get data in required format.
+server produces json and xml both by default
+
+HATEOAS
+Hyphermedia as the Engine of Application State
+
+SOAP can be used to test xml and json output both
+we can also set http headers
+
+GET for all products and single product tested.
+POST tested
+
+Now client code 
+
+in apache cxf, two ways use a spring servlet or a non-spring-servlet
+apachecxf requires to overide getClasses in MyRESTApplication class
+
+RS client can't be written as standalone as jars not yet in core java.
+ws client can be written as it's part of core java since java6
+
+
+
+SAAJ: SOAP with Attachemetns API for java
+
+JAXB Java Architecture for XML Binding
+
+JAXP Java API for XML Processing
+
+mtom Message Transport Optimization [On using this, message will be sent as attachement and not in body]
+
+
+Timeline
+
+Day 1 : Created web-service, started server. Written client, generate proxy using wsimport. Tested with glassfish, tester, soapui and java client code
+
+Java client code : Synchronous or Asynchronous (polling and callback)
+
+Day 2: Created more variant clients
+
+    Client with dispatch ( still using proxy class)
+    Client with dispatcha and JAXB (still little proxy class use)
+    Client with SAAJ (complete SOAP message request response)
+
+Then, looked into creating wsdl using eclipse inbuilt tool. Document literal type wsdl can be validated easily as there is separate xsd schema, which is not present in RPC style wsdl which makes validation difficult for the parsers
+
+Day 3: Attachement with and without MTOM, SOAP Hanlder. Walked through apacher-cxf project written for tomcat server.
+
+Restful theory
+ Links
+
+https://glassfish.java.net/downloads/3.1-final.html
+
+http://le0250xqz:8080/WS-proj1/CurrencyConverterServiceService
+
+http://le0250xqz:8080/WS-proj1/CurrencyConverterServiceService?wsdl
+
+http://le0250xqz:8080/WS-proj1/CurrencyConverterServiceService?xsd=1
+
+http://le0250xqz:8080/WS-proj1/CurrencyConverterServiceService?tester
+
+http://majrul.com/WebServices/
+
+webservicex.net
+
+http://www.ibm.com/developerworks/library/ws-whichwsdl/

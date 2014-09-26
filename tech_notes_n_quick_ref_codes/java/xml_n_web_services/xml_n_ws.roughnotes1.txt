@@ -1,0 +1,137 @@
+Questions?
+- difference between dtd and xsd
+- what is apache axis, cxf, metro called?
+- will the code be same for apache cxf if written in glassfish?
+- offline where to see the .xsd?
+
+XML Based or SOAP Based services
+JAXB and SAAJ
+RESTful
+.Net dev needs to learn WCF for web services and IIS
+
+Propritary RMI, RCP, EJB
+
+Go through JAXWS, JAXB and JAXRS to be called a web service developer
+
+We need to be comfortable with:
+ - XML Namespaces and xml schemas
+ - xml parsing apis
+ - SOAP and WSDL
+ - JAXP, DOM/SAX/STAX, JAXB, SAAJ (soap api for attachment with java), JAX-WS
+
+XML Namespaces:
+same analogy as packages in java.
+We can't have two Dates unless of packages java.util.Date and java.sql.Date
+<t:training xmlns:t="http://www.ab.com/trainig">
+    <t:subject name="Java">...</t:subject>
+</t:training>
+One default or root namespace
+
+schema location ~ classpath
+
+.xsd and .dtd both have same purpose
+
+1st step would be defininng xsd
+then wsdl
+
+JAXP
+java library
+thin and lw api for parsing and transforming XML documents
+supports all parsing strategies
+ SAX (Event Driven)
+ DOM (tree based)
+ StAX (pull based) (combination of both above)
+
+SAX
+Simple API for XML
+Event Driven - you provide event handlers
+Fast and lw - document does not have to be entirely in memory
+Sequential read access only
+Does not support modificaiton of document
+
+DOM
+Document Object Model
+Access XML Document as a tree structure
+Can walk the tree back and forth
+Larger memory requirements - bcoz it stores whole XML in memory
+
+Pull vs Push parsing differences
+Pull is good
+
+StAX
+Streaming api for XML
+pull
+latest
+creates a bidirectional XML parser that is fast, easy to program and light memory footprint
+
+SOAP [Simple Object Access Protocol]
+Intro
+SOAP Message
+SOAP example
+ SOAP request
+ SOAP response
+SOAP Application flow
+ SOAP client
+
+Intro
+is and XML based messaging protocol
+It is protocol, platform and lang independent
+ - soap over http is most common
+supports RPC as well as Asynchronous Messaging style protocol
+ - RPC is most common callable service
+is an imp building block for developing distributed applications
+
+SOAP Message
+is an envelope
+Header(s)  zero, one, many
+ ctrl info, security, authorization
+body one
+
+Sample SOAP Application Flow
+       SOAP Request             Method Call                    DB call
+Client  ----->         Listener  ----->      Service Methods   ----->    Database
+       <------                   <------                      <------
+       SOAP Response            Method Response             DB response
+    
+    Transport          Servlet             Java Beans                     Oracle
+     Layer     
+
+we need proxies at client
+
+Apache Axis(out dated), CXF (modern, default for JBoss) or Metro(default for glassfish) are implementation for web services
+ - to do the marshalling and unmarshiling, extract and interpret request and create the response,
+ - all the hard work
+
+Glassfish application server - include Metro
+
+
+jdk provides all tools/lib for creating a client i.e. to consume the service ( no need of cxf, metro) since java5
+ 0 in bin directory
+
+SOAP data types
+Scalar
+ boolean, int, doule, string
+Vector
+ array, object, hash
+
+WSDL
+Web Service Definition Language
+
+
+WSDL each tag walk through
+definitions
+data-types ( can point to different xsd)
+message (all possible communication units)
+portType ( service and functions available)
+binding
+serviceLocation
+
+
+http://webservicex.net/ws/default.aspx
+soap ui
+?wsdl ?tester in glassfish
+
+
+Client in pure jdk
+command/tools
+wsimport  -d src -keep -p client http-wsdl-url
