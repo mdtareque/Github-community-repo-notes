@@ -31,12 +31,15 @@ http://www.ipnom.com/ClearCase-Commands/mkbrtype.htm
     
     cleartool -unco fileName.sql
 
-
-Check in
+### Check in
 
     cleartool ci -c 'comment' fileName.sql
 
-See the checkouts done in current dir
+### Edit a checken in comment
+
+    cleartool chevent –replace –c "NEW_COMMENT" ELEMENT_NAME
+
+### See the checkouts done in current dir
 
     cleartool lsco
 
