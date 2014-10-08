@@ -9,6 +9,7 @@ Sybase Migration - Changes required for 12 to 15 - [pdf](http://www.sybase.in/fi
 [locking](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20021_1251/html/locking/locking88.htm)  
 [sybase client/server](http://manuals.sybase.com/onlinebooks/group-cn/cng1250e/osref/@Generic__BookTextView/328)  
 [cursor timelog perfromance](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.dc20020_1251/html/databases/databases537.htm)  
+[Java connection param](http://infocenter.sybase.com/help/topic/com.sybase.infocenter.dc39001.0707/pdf/prjdbc0707.pdf) (http://sap-note.com/1892774.htm) [EARLY_BATCH_READ_THRESHOLD] connection hangs for large data in jconnect 7
 
 ### General DDL and DML queries
 Quick DDL
