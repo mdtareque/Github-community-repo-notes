@@ -9,3 +9,12 @@ strictfp - Class Method
 
 - Enum constructors can'be public, protected. 
 - arrays implement clonable and seriable. clone is the only method not inherited from Object.
+
+
+- compiler can't choose between primitive var-arg and boxed var-args
+- Assertions
+   - Don't Use Assertions to Validate Arguments to a Public Method
+   - Do Use Assertions to Validate Arguments to a Private Method
+   - Don't Use Assertions to Validate Command-Line Arguments
+   - Do Use Assertions, Even in Public Methods, to Check for Cases that You Know Are Never, Ever Supposed to Happen
+   - Don't Use Assert Expressions that Can Cause Side Effects!
