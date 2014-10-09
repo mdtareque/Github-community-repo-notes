@@ -10,6 +10,9 @@ http://docs.oracle.com/javase/tutorial/reflect/index.html
 object class explanation in detail
 http://docs.oracle.com/javase/tutorial/java/IandI/objectclass.html
 
+file.getPath, getCanonicalPath, getAbsolutePath
+http://stackoverflow.com/questions/1099300/whats-the-difference-between-getpath-getabsolutepath-and-getcanonicalpath
+
 
 web component pdf 
 http://www.javaranch.com/carl/scwcd/SunCertifiedWebComponentDeveloperStudyGuide.pdf 
