@@ -18,3 +18,6 @@ strictfp - Class Method
    - Don't Use Assertions to Validate Command-Line Arguments
    - Do Use Assertions, Even in Public Methods, to Check for Cases that You Know Are Never, Ever Supposed to Happen
    - Don't Use Assert Expressions that Can Cause Side Effects!
+
+
+If a parent constructor throws a check or uncheck exception, the child needs write the consutructor throwing same exception atleast or a broader
