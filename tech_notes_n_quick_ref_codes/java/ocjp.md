@@ -1,3 +1,26 @@
+✅ interfaces, abstract classes
+✅ declaration , class name , variable
+✅ generics
+✅ Overloaded and overridden methods
+✅ Access Control
+✅ Wrapper classes
+✅ Flow control
+✅ Exceptions
+✅ Assertions
+✅ Inner Classes
+✅ Calendar, Datetime, locale
+✅ String, Builder, Buffer
+✅ Thread, synchronizing, wait, notify
+✅ Inner classes
+✅ Serialization
+✅ Development - classpath 
+✅ File Reader, Write, Buffered
+✅ Coupling, Cohesion
+Collections
+Pattern, tokenizing
+
+
+
 ##Chap 1.
 
 Legal Identifiers,
