@@ -1,6 +1,7 @@
 
-Can be applied to
-strictfp - Class Method
+- Can be applied to 
+1. strictfp - Class Method
+
 
 - The abstract methods in type abstract class can only set a visibility modifier, one of public or protected
 - Interface methods are implicitly public abstract
@@ -20,4 +21,16 @@ strictfp - Class Method
    - Don't Use Assert Expressions that Can Cause Side Effects!
 
 
-If a parent constructor throws a check or uncheck exception, the child needs write the consutructor throwing same exception atleast or a broader
+- If a parent constructor throws a check or uncheck exception, the child needs write the consutructor throwing same exception atleast or a broader
+
+- wait() throws InterruptedException
+
+- Arrays.sort() throw Runtime Error is object is not comparable
+- Collections.sort() give compile time error if object is not comparable
+
+- advanced for can't be used over a iterator
+
+- Integer parse gives NumberFormatException not NullPointerException if we pass null
+
+- Thread MAX(10), NORM(5), MIN(1) priorities
+
