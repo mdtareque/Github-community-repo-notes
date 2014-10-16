@@ -17,3 +17,6 @@ http://stackoverflow.com/questions/1099300/whats-the-difference-between-getpath-
 web component pdf 
 http://www.javaranch.com/carl/scwcd/SunCertifiedWebComponentDeveloperStudyGuide.pdf 
 http://read.pudn.com/downloads165/ebook/752139/SCWCD.pdf 
+
+byte code  
+http://www.javaranch.com/journal/200408/ScjpTipLine-javap.html
