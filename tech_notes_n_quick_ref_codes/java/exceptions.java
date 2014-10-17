@@ -27,3 +27,10 @@ Exception in thread "main" java.util.IllegalFormatFlagsException: Flags = '-+0,'
 	t.wait(10000);
 
 Exception in thread "main" java.lang.IllegalMonitorStateException
+
+6. 
+    Thread t = new Thread(MyThread);
+    t.start();
+    t.start(); // < --
+   
+Exception in thread "main" java.lang.IllegalThreadStateException
