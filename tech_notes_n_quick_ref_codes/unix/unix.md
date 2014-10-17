@@ -112,7 +112,11 @@ Convert a timestamp to date and do the manipulations
 
     scp /tmp/file.txt user@host:remote-path-to-store
 
+### ftp
+get fails if complete destination-path+file-name is more that 140 characters, with below error
 
+ftp> get somefile <local-atleast141-char-path>
+sorry, input line too long
 
 
 ## Build jenkins job via shell-script
