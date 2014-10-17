@@ -16,3 +16,14 @@
  
  java.lang.NumberFormatException: For input string: "123.3"
 
+4.
+    System.out.format(">%-0+,15d<", 32);
+
+Exception in thread "main" java.util.IllegalFormatFlagsException: Flags = '-+0,'
+
+5.
+    Thread t = new Thread();
+	t.start();
+	t.wait(10000);
+
+Exception in thread "main" java.lang.IllegalMonitorStateException
