@@ -35,6 +35,13 @@ Exception in thread "main" java.lang.IllegalMonitorStateException
    
 Exception in thread "main" java.lang.IllegalThreadStateException
 
+7.
+
+	Integer[] aaa = {2,3,4,5};
+	List<Integer> AAA = Arrays.asList(aaa);
+	AAA.add(2341);
+	
+Exception in thread "main" java.lang.UnsupportedOperationException
 
 
 ConcurrentModificationException
