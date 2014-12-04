@@ -20,3 +20,9 @@ http://read.pudn.com/downloads165/ebook/752139/SCWCD.pdf
 
 byte code  
 http://www.javaranch.com/journal/200408/ScjpTipLine-javap.html
+
+all vm options  
+http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
+
+everything about gc  
+http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html
