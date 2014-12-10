@@ -7,6 +7,12 @@ Technologies used:
  Android App Development
  Amazon Web Services, Amazon EC2
  ORMs : Hibernate, iBatis
+ J2EE - JMS, JMX
+ Spring framework
+ Apache Qpid (Messaging system that implements AMQP)
+
+Build tools:
+ ant, maven, jenkins/hudson
 
 Special Ability/ Comptency/ Talent/ Strength:
  Power user of keyboard shortcuts both in windows and unix
@@ -19,7 +25,7 @@ Pro at using:
 Good at using
  Unix commands, Data-Structures, Design Patterns, Regex, AJAX, Multi-threading
 
-Version Contro Systems:
+Version Control Systems:
  git, svn, clearcase, cvs
 
 Databases:
