@@ -203,6 +203,8 @@ Get the users group and access level on a table.
 
 Options set can be seen by _@@options_ that returns a [hex output](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.help.ase_15.0.sqlug/html/sqlug/sqlug611.htm).
 
+Other [set options](http://infocenter.sybase.com/help/index.jsp?topic=/com.sybase.infocenter.dc36272.1572/html/commands/X64136.htm)  
+e.g `SET FLUSHMESSAGE ON`
 
 ### space usage
 
