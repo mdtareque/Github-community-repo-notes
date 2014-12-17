@@ -1,0 +1,9 @@
+- Add "-showlocation" to eclipse.ini to display workspace location in title bar
+- 'Window' --> 'Customize Perspective' to clear out the screen elements. Hide toolbar items, views.
+- Debugger
+ - F5, F6, F8 -> normal operations
+ - 'Display' view to execute adhoc code
+ - 'Expression'
+ - Drop to Frame - restart from current method (partially)
+ 
+ 
