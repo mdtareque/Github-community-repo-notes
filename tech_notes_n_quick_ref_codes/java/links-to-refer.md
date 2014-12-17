@@ -1,4 +1,5 @@
 
+Learning Paths
 http://docs.oracle.com/javase/tutorial/tutorialLearningPaths.html
 
 Memory usage and leaks
@@ -29,3 +30,5 @@ http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html
 
 everything about gc  
 http://www.oracle.com/technetwork/java/javase/gc-tuning-6-140523.html
+
+http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html
