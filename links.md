@@ -49,3 +49,8 @@ XSS game and solution
 https://xss-game.appspot.com/
 http://secchal.blogspot.in/2014/05/xss-game-1.html
 https://www.google.com/about/appsecurity/learning/xss/index.html
+
+ever in lif a big project  
+https://www.airpair.com/aws/posts/building-a-scalable-web-app-on-amazon-web-services-p1?wed
+https://wblinks.com/notes/aws-tips-i-wish-id-known-before-i-started/
+
