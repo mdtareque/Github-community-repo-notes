@@ -1,0 +1,859 @@
+Python basic
+1 Intro
+Add history-saving and autocompletion in .pythonrc and .inputrc
+https://docs.python.org/2/tutorial/interactive.html
+
+dir(variable)   # gives all available functions
+Maths 2+3.0
+strings
+single quote and double quotes are same
+Tripple quote to include new line character
+
+print -- does not print the control character, executes them
+
+s="hello"
+s[0]   = h
+s[-1]  = o
+s[1:3] = 1 to 3
+s[:3]  = start to 3
+s[-3:] = last but 3 to end
+len(s)
+s.split() = always splits on space
+
+List
+l = [ 1, 2.0, 'name' ]
+l[0]
+l[-1]
+len(l)
+l.append('other')
+
+Set
+a = { 1,2,3,4 }
+b = { 5,2,3,4 }
+a&b
+a|b
+a^b
+a-b
+Dictionaries
+d={'cats': 4, 'rabbit': 2}
+d.keys()
+d.items()    = is a tuple i.e. unmutable list
+d.values()
+d['cats']
+d['cats'] += 5
+d['horse'] = 50
+
+from numpy import array
+a=array([1,2,3,4])
+a+2     = adds 2 to each element
+a+a     = adds individual elements and not doubles the length of list
+from matplotlib.pyplot import plot
+plot(a, a**2) = makes a graphic chart
+
+line = '1 2 3 4 5'
+sum([int(field) for field in line.split()])
+
+File read/write
+>>> fopen('data-chap1.txt', 'w')
+>>> file.write('1 2 3 4\n')
+>>> file.write('5 2 3 4\n')
+>>> file.close()
+
+>>> file = open('data-chap1.txt')
+>>> data=[]
+>>> for line in file:
+...   data.append([int(field) for field in line.split()])
+...
+>>> data
+[[1, 2, 3, 4], [5, 2, 3, 4]]
+>>> for row in data:
+...   print row
+...
+[1, 2, 3, 4]
+[5, 2, 3, 4]
+
+Functions
+>>> def poly(x, a, b, c):
+...   y = a*x**2 + b*x +c
+...   return y
+...
+>>> x=1
+>>> poly(x, 1,2,3 )
+6
+>>> def poly(x, a=1, b=2, c=3):
+...   y = a*x**2 + b*x + c
+...   return y
+>>> poly(x)
+6
+>>> poly(x,b=4)
+8
+Modules
+import os
+os.getpid()
+os.sep
+
+classes
+>>> class Person(object):
+...   def __init__(self, first, last, age):      "Not a contructor, it's a initialzer
+...     self.first=first
+...     self.last=last
+...     self.age=age
+...   def full_name(self):
+...     return self.first + ' ' + self.last
+...
+>>> person = Person('Tareque', 'Khan', 25)
+>>> person.first
+'Tareque'
+>>> person.last
+'Khan'
+>>> person.full_name()
+'Tareque Khan'
+>>> d={'house':1, 'garden':2}
+>>> d
+{'house': 1, 'garden': 2}
+>>> person.properties=d
+
+web
+>>> import urllib2
+>>> url = 'http://ichart.finance.yahoo.com/table.csv?s=MSFT&a=01&b=1&c=2014&d=03&e=1&f=2014&g=d&ignore=.csv'
+>>> get_csv = urllib2.urlopen(url)
+more to-do : parse date, convert to float, int, plot
+
+2 Datatypes
+Integer Numbers 0,1,-100
+Decimal Numbers 3.1416
+String          'hello'
+Lists           [1, 1.2, 'hi']      # hetrogenous collection
+Dictionary      {'cat'   : 5
+                 'horse' : 1}
+Numpy Array     array([1, 3, 3])    # Not Built-in
+
+Other Data Types
+Long Numbers
+Sets
+Boolean
+Complex Numbers
+Tuple
+User Defined Types ooo
+Pandas (3rd party) Data Frame, Series
+
+
+3 Integers and numbers
+Integers
+>>> 2+2
+>>> type(a)
+<type 'int'>
+
+float limit
+32-bits 2 billion +/0
+64-bits 9 followed by 18 zeros +/-
+>>> import sys
+>>> sys.maxint
+9223372036854775807
+
+>>> a=sys.maxint+1
+>>> a
+9223372036854775808L
+>>> type(a)
+<type 'long'>
+
+>>> a=4.1
+>>> type(a)
+<type 'float'>
+
+>>> b=1.4 + 1.2
+>>> b
+2.5999999999999996
+>>> print b
+2.6
+Python floats are always 8 bytes long ( same as double in C )
+For single precision floats, use NumPy arrays.
+
+Complex numbers
+>>> a = 1 +2j
+>>> a
+(1+2j)
+>>> type(a)
+<type 'complex'>
+>>> a.real
+1.0
+>>> a.imag
+2.0
+>>> a.conjugate()
+(1-2j)
+
+Arithmetic Operations
+>>> abs(-3)
+3
+>>> max( 0 , min(10,-1,43))
+0
+
+function names can be shadowed by variable
+>>> max = 100
+>>> x=max(4,5)
+  TypeError: 'int' object is not callable
+
+>>> int(2.435)
+2               # Always goes towards zero
+
+Other base numbers
+>>> 6e3
+6000.0
+>>> 0xff
+255
+>>> 023
+19
+
+Boolean
+>>> q=True
+>>> type(q)
+<type 'bool'>
+>>> q=1<0
+>>> q
+False
+>>> 1>=2
+False
+>>> 2**3 != 3**2
+True
+>>> 1 < 10 < 100
+True
+>>> 1 < 100 < 50    # All should hold true
+False
+
+Logical expressions
+and, or not operator
+normal, shortcircuit, not
+4 string
+String
+ordered sequence of characters
+
+double or single be consistent
+concatenate by ++b
+a*3
+len(a)
+
+>>> s="hi abc"
+>>> s.split()
+['hi', 'abc']
+>>> a=s.split()
+>>> ' '.join(a)
+'hi abc'
+
+>>> s="\t hello \t"
+>>> s
+'\t hello \t'
+>>> print s
+    hello
+>>> print s.strip()
+hello
+
+Multi-line
+""" or () or line-continuation \
+
+>>> str(1)
+'1'
+>>> str(1.1+2.2)
+'3.3'
+>>> repr(1.1+2.2)       # repo provides the full conversion
+'3.3000000000000003'
+>>> hex(255)
+'0xff'
+>>> oct(255)
+'0377'
+>>> int('23')
+>>> int('0xf',16)
+
+Creating a transational table
+>>> import string
+>>> string.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+>>> string.maketrans(string.punctuation, ''*32)
+ValueError: maketrans arguments must have same length
+>>> string.maketrans(string.punctuation, ' '*32)
+'\x00\x01\x02\x03\x04\x05\x06\x07\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f                0123456789       ABCDEFGHIJKLMNOPQRSTUVWXYZ      abcdefghijklmnopqrstuvwxyz    \x7f\x80\x81\x82\x83\x84\x85\x86\x87\x88\x89\x8a\x8b\x8c\x8d\x8e\x8f\x90\x91\x92\x93\x94\x95\x96\x97\x98\x99\x9a\x9b\x9c\x9d\x9e\x9f\xa0\xa1\xa2\xa3\xa4\xa5\xa6\xa7\xa8\xa9\xaa\xab\xac\xad\xae\xaf\xb0\xb1\xb2\xb3\xb4\xb5\xb6\xb7\xb8\xb9\xba\xbb\xbc\xbd\xbe\xbf\xc0\xc1\xc2\xc3\xc4\xc5\xc6\xc7\xc8\xc9\xca\xcb\xcc\xcd\xce\xcf\xd0\xd1\xd2\xd3\xd4\xd5\xd6\xd7\xd8\xd9\xda\xdb\xdc\xdd\xde\xdf\xe0\xe1\xe2\xe3\xe4\xe5\xe6\xe7\xe8\xe9\xea\xeb\xec\xed\xee\xef\xf0\xf1\xf2\xf3\xf4\xf5\xf6\xf7\xf8\xf9\xfa\xfb\xfc\xfd\xfe\xff'
+>>>speech.translate(table)         # removes all punctuation
+5-index-slice-seq.txt
+Indexing String and ordering sequences
+
+s="hello"s[0] :'h's[-3]:'r'
+
+s[2342]
+IndexError: string index out of range
+slicing
+var[lower:upper:step]   # lower is inclusive
+                        # upper is exclusive
+                        # step is optional
+
+s="hello"
+s=[1:3]
+s=[1:-2]
+s=[-4:3]
+all are same
+upper or lower can be omitted
+s[:3] or s[-2:]
+skipping values
+s[::2] 'hlo'
+below are valid
+>>> s[:6]           # beyond length
+'hello'
+>>> s[:]            # empty
+'hello'
+>>> s[0:len(s)]
+'hello'
+6-rationale-for-0-offset-n-slicing-convention
+digkstra
+s= s[:i] + s[i:j] + s [j:]
+7-stirng-formatting
+in newer python
+>>> print('{} {} {}'.format('a', 'b', 'c'))
+or provide index
+>>> print('{2} {1} {0}'.format('a', 'b', 'c'))
+or named fields
+>>> print('{color} {n} {x}'.format(x=1.3, n='foo', color='blue'))
+or mix
+>>> print('{color} {0} {n} {1}'.format(34, 'foo', n=1.3, color='blue'))
+{0:10.2f}
+index:number-of-char,number of digits after decimal
+8-list
+creation, addition, multiplication
+range(stop)
+range(start, stop)
+range(start, stop, step)
+
+add list to another list and shift the items
+a=[1:3]=[1,2,3,4,5]
+
+delete some elements
+a[1:3]=[]
+>>> a[1:5:2]=[]
+ValueError: attempt to assign sequence of size 0 to extended slice of size 2
+
+del a[2]
+234 in list_a
+append          single element
+a.extend([1,2]) complete list
+
+a.count(43)
+a.index(23)
+a.insert(3,20)
+a.remove(11)    remove element 11
+a.pop(2)        remove index 2, returns the deleted element, not like del a[2]
+inplace sort
+a.sort()
+
+9-mutable-vs-immutable.txt
+string immutable
+TypeError: object does not support item assignment
+
+Mutable
+list
+dictionary
+set
+numpy array
+user defined objects
+
+Immutable
+integer
+float
+complex
+long
+string
+tuple
+frozenset
+
+string immutablity allows them to be keys in dictonary.
+Keys have to be immutable
+10-tuples.txt
+>>> a= (10,12,23,15)
+>>> a
+(10, 12, 23, 15)
+>>> a = 10,11,23,1223
+>>> a
+(10, 11, 23, 1223)
+>>> (10)                # single element tuple needs to have a comma
+10
+>>> (10,)
+(10,)
+>>> a=[234,45]
+>>> tuple(a)
+(234, 45)
+from collections import namedtuple
+with this, we can use person.first instead of person[0]
+
+11-list-vs-tuples-speed.txt
+size should be greater than 20, to test speed as python caches the result for smaller size.
+
+tuples are faster
+list 249 ns per loop
+tupe 20.9 ns per loop
+tuple use in a function is faster, less os commands
+12-dict
+dict values can have dict
+tuple can be given
+>>> i=dict([(1,'a')])
+>>> i
+{1: 'a'}
+>>> i=dict([(1,'a','b')])
+  ValueError: dictionary update sequence element #0 has length 3; 2 is required
+keys have to be hashable
+keys can be
+int, string
+float or complex (not recommended)
+tupe and frozenset
+list and dict not allowed
+Besides: NetworkX to play with graphs
+13-dict-methods.txt
+# default get value
+>>> woobsters={}
+>>> woobsters['mutable']='change'
+>>> woobsters
+{'mutable': 'change'}
+>>> woobsters.get('mutable','unkown')
+'change'
+>>> woobsters.get('mutabe','unkown')
+'unkown'
+
+# to delete
+del woobsters['one']
+
+# delete and get
+woobsters.pop('mutable')
+give 0 if not there
+>>> w.pop('mutable',0)
+Or else we get error
+KeyError: 'pop(): dictionary is empty'
+
+
+
+# update
+>>> p={}
+>>> p['f']="jmes"
+>>> p['a']=32
+>>> p_mod={'f':'james', 'm':'clle', 'a':55}
+>>> p.update(p_mod)
+>>> p
+{'a': 55, 'm': 'clle', 'f': 'james'}
+
+# Check if present
+>>> barn = {'cows': 1, 'cats':3, 'horse':5}
+>>> 'chickens' in barn
+False
+>>> 'cows' in barn
+True
+
+barn.items()    # return as tuples
+barn.keys()
+barn.values()
+
+# from exercise
+friends = {'julius': '100 via apian', 'cleopatra': '000 pyramid parkway'}
+romans = dict(brutus='234 via tratorium', cassius='111 aqueduct lane')
+countrymen = dict([('plebius','786 via bunius'), ('plebia', '786 via bunius')])
+
+# Antony needs to mail everyone for his second-triaumvirate party.  Make a
+# single dictionary containing everyone:
+mailing_list = {}
+mailing_list.update(friends)
+mailing_list.update(romans)
+mailing_list.update(countrymen)
+
+print 'party mailing list:'
+print mailing_list
+print
+
+# Or, using a loop (which we haven't learned about yet...):
+print 'party mailing list:'
+for name, address in mailing_list.items():
+  print name, ':\t', address
+  print
+
+
+14-sets.txt
+SET
+>>> s=set([1,4,3,1])
+>>> s
+set([1, 3, 4])
+set can have only immutable items
+>>> s=set([1,4,3,[45]])
+TypeError: list objects are unhashable
+Set operations:
+union
+intersection
+difference
+symmetric difference (xor ^), either in a or b but not in both
+Set containment
+Subset
+b.issubset(a)
+b <= a
+Superset
+a.issuperset(b)
+a >= b
+SET modification
+add()
+update()
+t.remove(1) # sepcific element, not an index, Raises exception if not present
+t.discard(3) # does nothing, if not present
+t.pop()     # arbitrary element
+SETS in Action:
+in operator
+Frozen SET:
+>>> fd={}
+>>> p=set(['LA', 'NY'])
+>>> p
+set(['NY', 'LA'])
+>>> fd[p]=234
+TypeError: set objects are unhashable
+>>> p=frozenset(p)
+>>> fd[p]=435
+>>> fd
+{frozenset(['NY', 'LA']): 435}
+15-assignment.txt
+Python Assignment
+Function calls are pass-by-assignment
+namespace - dynamic exec
+>>> code="""
+... x= 6
+... y=x
+... y='foo'
+... print(x)
+... """
+>>> code
+"\nx= 6\ny=x\ny='foo'\nprint(x)\n"
+>>> ns={}
+>>> exec code in {}, ns
+6
+>>> ns
+{'y': 'foo', 'x': 6}
+16-control-flow.txt
+
+if/elif/else
+if <cond>:
+    stmS1
+elif cond:
+    stmt2
+else:
+zero, None, "" and empty dict are falsy
+if x is None:
+if x is not None:
+while lst:
+  print lst
+for x in vals:
+  stms
+else:
+
+17-list-comprehension.txt
+>>> sq = [x*x for x in range(4,12)]
+>>> sq
+[16, 25, 36, 49, 64, 81, 100, 121]
+>>> filtered_sq = [x*x for x in range(4,12) if x>10]
+>>> filtered_sq
+[121]
+Py2.7
+>>> sq_set = {x*x for x in range(1,4) if x > 2}
+>>> sq_dict = {x: x*x for x in range(1,4) if x > 2}
+
+
+generator better if large number of values
+
+
+18-functions.txt
+def add(arg0, arg1):
+  """ add two numbers """
+  a=arg0+arg1
+  return a
+
+def name(params..)colon
+  commment
+  stms
+  optional return
+no diff between function or sub-routine
+parameters can be
+ - positional
+ - named i.e. can be unordered
+ - or mixuture of two
+param can be given default values
+variable number of arguments
+positional
+def add(x, *args):
+    for arg in args:
+keyword arguments
+or **kwargs
+    for arg,value in kwargs,items()
+Multiple return values
+return r, t
+a, b = func()
+a, b, c = [1, 2, 3]
+>>> def add(x,y):
+...   return x+y
+...
+>>> z=(2,3)
+>>> print add(z)
+Traceback (most recent call last):
+File "<stdin>", line 1, in ?
+TypeError: add() takes exactly 2 arguments (1 given)
+>>> print add(*z)
+5
+19-package-module.txt
+needs to be .py file
+python only executes the import once,
+any further same calls to import, just updates the reference
+TEST this, update the file in 2nd terminal and see output
+reload(module) to re-execute the module
+
+execute as script or module only
+if __name__ = '__main__':
+    test()
+
+import variations
+import abc as a
+from abc import f1,f2,var1
+from abc import *
+
+package needs to have (even empty) __inti__.py file
+package = directory
+module = python file
+
+Python modules
+re - regular expression
+copy - shallow/deep copy
+datetime
+math, cmath - real and complex
+decimal, fraction
+os os.path, shutil
+sqlite3
+gzaip, bz2, zipfile, tarfile
+csv, netrc
+xml
+htmllib
+httplib, ftplib, poplib, socket
+
+cmd
+pdb
+profile
+collections, heapq, blist
+mmap - memory mapped files
+threading, Queue
+multiprocessing
+subprocess
+picker, cPickle - object serialization
+struct
+
+to see content of any one
+dir(module_name)
+PYTHONPATH
+20-try-except.txt
+while True:
+    try:
+    except ValueError:
+One
+    except ValueError:
+Specific
+    except (ValueError, ZeroDivisionError):
+All
+    except Exception:
+OR
+    except ValueError:
+        stmt
+    except ZeroDivisionError:
+        stmt
+
+get exception obj
+except ValueError as ex:
+only below, will catch all non-error exceptions like KeyboardInterrupt
+except:
+21-exception-creation.txt
+class LenMismatchError(ValueError):
+    pass
+call it as raise LenMismatchError(msg)
+22-finally.txt
+finally caluse always executes
+import os
+import tempfile
+
+fileno, path = tempfile.mkstemp()
+f = open(path, 'w')
+try:
+    f.write("hi")
+finally:
+        f.close()
+        os.remove(path)
+
+bad way
+if os.path.exists(fname):
+good way
+try:
+        f = open(filename)
+        text = f.read()
+except IOError as exec:
+        if exc.errno == 2:
+                print 'file not exists'
+        text=""
+
+ you are better off just trying to do things and then catching the exceptions, if needed
+  rather than trying to check something and then trying to do it.
+23-raising-exceptions.txt
+raise ValueError(msg)
+24-warining.txt
+import warnings
+warnings.filterwarnings(action="ignore", category=RuntimeWarning)
+25-file-io.txt
+open('file', mode)
+mode: 'r', 'w', 'w+', 'a',
+'rU' : universal newline mode
+'wb' : binary mode
+'rb' : binary mode
+f.newlines() gives the charcters detected by rU
+
+nicer way
+# closes automatically
+with open('fname', 'w') as f:
+   f.write('adsf\n')
+exec-unix-cmd.txt
+import subprocess
+import shlex
+import glob
+>>> cmd='grep -i string *.txt'
+>>> arg = shlex.split(cmd)
+>>> arg = arg[:-1] + glob.glob(arg[-1])
+>>> arg
+['grep', '-i', 'string', '1-intro.txt', '2-data-types.txt', 'data-chap1.txt', '3-numbers-integers.txt', '4-strings.txt']
+>>> subprocess.call(arg)
+1-intro.txt:strings
+2-data-types.txt:String          'hello'
+4-strings.txt:String
+0
+imports-used-so-far
+
+import sys              # cmdline args, exit
+import datetime         # to get todays date and find weekday
+import time             # to fine timedifference, by converting str to datetime using strptime, and mktime
+import pprint           # pretty print for dict
+import csv              # good for reading, auto dict is created
+import copy             # make a copy of dict
+
+error-exceptions-along-the-way.txt
+>>> b=dict(b)
+TypeError: cannot convert dictionary update sequence element #0 to a sequence
+i.e. copying same dict to same variable, not in 2.4
+
+SyntaxError: name 'data' is a function parameter and declared global
+i.e. If function param name same as global declaration
+
+NameError: name 'sys' is not defined
+i.e. missing import
+
+TypeError: int argument required
+i.e. format specifier was %d instead of %s
+
+xmlrpclib.Fault: <Fault 0: "java.lang.Exception: com.atlassian.confluence.rpc.AuthenticationFailedException: Attempt to log in user 'e573309' failed - incorrect username/password combination.">
+i.e. wrong pass for xmlrcplib confluence api
+
+listTrap.py
+l = [ [] ]* 4
+print l
+l[0].append('surprise!')
+print l
+BinaryTree_iter.py
+class BinaryTree(object):
+        def __init__(self, value, left=None, right=None):
+                self.value = value
+                self.left = left
+                self.right = right
+
+        def __iter__(self):
+                return InorderIterator(self)
+
+class InorderIterator(object):
+        def __init__(self, node):
+                self.node = node
+                self.stack = []
+
+        def next(self):
+                if len(self.stack) > 0 or self.node is not None:
+                        while self.node is not None:
+                                self.stack.append(self.node)
+                                self.node=self.node.left
+                        node = self.stack.pop()
+                        self.node = node.right
+                        return node.value
+                else:
+                        raise StopIteration()
+tree = BinaryTree(
+                left=BinaryTree(
+                        left=BinaryTree(1),
+                        value=2,
+                        right=BinaryTree(
+                                left=BinaryTree(3),
+                                value=4,
+                                right=BinaryTree(5)
+                        ),
+                ),
+                value=6,
+                right=BinaryTree(
+                        value=7,
+                        right=BinaryTree(8)
+                )
+        )
+for value in tree:
+        print value,
+
+
+BinaryTree_generator.py
+class BinaryTree(object):
+        def __init__(self, value, left=None, right=None):
+                self.value = value
+                self.left = left
+                self.right = right
+        def __iter__(self):
+                return self.inorder()
+        def inorder(self):
+                # traverse the left branch
+                if self.left is not None:
+                        for value in self.left:
+                                yield value
+
+                # yield node's value
+                yield self.value
+
+                # traverse the right branch
+                if self.right is not None:
+                        for value in self.right:
+                                yield value
+        def inorder_non_recursive(self):
+                node = self
+                stack = []
+                while len(stack) > 0 or node is not None:
+                        while node is not None:
+                                stack.append(none)
+                                node = node.left
+                        node = stack.pop()
+                        yield node.value
+                        node = node.right
+                # traverse the left branch
+                if self.left is not None:
+                        for value in self.left:
+                                yield value
+                # yield node's value
+                yield self.value
+                # traverse the right branch
+                if self.right is not None:
+                        for value in self.right:
+                                yield value
+tree = BinaryTree(
+                left=BinaryTree(
+                        left=BinaryTree(1),
+                        value=2,
+                        right=BinaryTree(
+                                left=BinaryTree(3),
+                                value=4,
+                                right=BinaryTree(5)
+                        ),
+                ),
+                value=6,
+                right=BinaryTree(
+                        value=7,
+                        right=BinaryTree(8)
+                )
+        )
+for value in tree:
+        print value,
