@@ -1,0 +1,88 @@
+Confluence-python
+errors-exceptions
+http://stackoverflow.com/questions/11611865/modify-wiki-page-confluence-programmatically
+https://answers.atlassian.com/questions/119987/api-to-create-confluence-pages
+https://developer.atlassian.com/display/CONFDEV/Remote+Confluence+Methods#RemoteConfluenceMethods-Pages
+https://confluence.atlassian.com/display/DOC/Confluence+Storage+Format
+
+Creating page with existing title
+
+    Traceback (most recent call last):
+      File "createPage.py", line 32, in ?
+        result = client.confluence2.storePage(auth_token, page)
+      File "/usr/lib64/python2.4/xmlrpclib.py", line 1096, in __call__
+        return self.__send(self.__name, args)
+      File "/usr/lib64/python2.4/xmlrpclib.py", line 1383, in __request
+        verbose=self.__verbose
+      File "/usr/lib64/python2.4/xmlrpclib.py", line 1147, in request
+        return self._parse_response(h.getfile(), sock)
+      File "/usr/lib64/python2.4/xmlrpclib.py", line 1286, in _parse_response
+        return u.close()
+      File "/usr/lib64/python2.4/xmlrpclib.py", line 744, in close
+        raise Fault(**self._stack[0])
+    xmlrpclib.Fault: <Fault 0: 'java.lang.Exception: org.springframework.transaction.UnexpectedRollbackException: Transaction rolled back because it has been marked as rollback-only'>
+
+Page not defined, need to have atleast space, title, content
+
+https://developer.atlassian.com/display/CONFDEV/Remote+Confluence+Methods#RemoteConfluenceMethods-Pages
+
+    Traceback (most recent call last):
+      File "updatePage.py", line 11, in ?
+        page['content'] = "!!!your content here!!!"
+    NameError: name 'page' is not defined
+
+
+createSimplePage.py
+# write to a confluence page
+import xmlrpclib
+import sys
+import os
+
+CONFLUENCE_URL = "https://confluence.com.com/confluence/rpc/xmlrpc"
+CONFLUENCE_LOGIN = "user"
+CONFLUENCE_PASSWORD = "xx"
+
+# and write the new contents
+client = xmlrpclib.Server(CONFLUENCE_URL, verbose = 0)
+auth_token = client.confluence2.login(CONFLUENCE_LOGIN, CONFLUENCE_PASSWORD)
+page={}
+page['space']="EHYPTP"
+page['title']="confluence-api-test"
+page['content'] = "!!!your content here!!!- tareque 2"
+
+result = client.confluence2.storePage(auth_token, page)
+client.confluence2.logout(auth_token)
+
+updatePage.py
+# get this from the page url while editing
+# e.g. ../editpage.action?pageId=132350005 <-- here
+PAGE_ID = "351595706"
+
+# and write the new contents
+client = xmlrpclib.Server(CONFLUENCE_URL, verbose = 0)
+auth_token = client.confluence2.login(CONFLUENCE_LOGIN, CONFLUENCE_PASSWORD)
+page = client.confluence2.getPage(auth_token, PAGE_ID)
+
+page['content'] = """
+<p>Description</p>
+"""
+result = client.confluence2.storePage(auth_token, page)
+client.confluence2.logout(auth_token)
+
+ deletePage.py
+# write to a confluence page
+id_to_delete=sys.argv[1]
+if id_to_delete == "39258235":
+        print "ALERT. Couldn't/Wouldn't/Shouldn't delete main feeds page."
+        sys.exit(-1)
+
+client = xmlrpclib.Server(CONFLUENCE_URL, verbose = 0)
+auth_token = client.confluence2.login(CONFLUENCE_LOGIN, CONFLUENCE_PASSWORD)
+
+result = client.confluence2.removePage(auth_token, id_to_delete)
+print result
+if result == True:
+        print "Page Deleted"
+# print type(result)
+client.confluence2.logout(auth_token)
+
