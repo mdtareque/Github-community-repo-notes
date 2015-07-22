@@ -1,0 +1,331 @@
+Python - adv
+1 sys module
+import sys # to interact with os
+sys.argv : list of command line args,
+argv[0] is script name
+sys.exc_info()  : info of most recent exception
+sys.exc_clear() : clear all exception information
+
+Standard File Objects
+sys.stdin, sys.stdout, sys.stderr
+sys.exit(optional-arg)
+sys.path # prints interpreter's search path for modules
+
+sys.platform, sys.getwindowsversion() # on windows
+sys.version, sys.version_info
+
+2 os module
+import os # manipulate filesystems, processes
+
+PATH operations
+os.remove(path) os.unlink(path)
+os.chdir(path), os.getcwd(), os.listdir(path)
+
+Separation Constants
+os.linesep, os.sep, os.pathsep
+
+Others
+os.environ, os.urandom(len), os.error
+
+os.path
+os.path.isfile(path)
+os.path.isdir(path)
+os.path.exists(path)
+os.path.isabs(path)
+
+os.path.split(path) returns tuple
+os.path.join(a, *p) Join 2 or more path components
+
+os.path.abspath(path)
+os.path.dirname(path_
+os.path.basename(path)   # gives final component of pathname
+os.path.splitext(path)   # split extension
+os.path.expanduser(path) # expands ~ or $home
+
+
+
+
+
+
+	3 csv
+import csv
+>>> r = csv.reader(open('data.csv')) # reading
+open("out.csv", "wb") # writing
+csv.writer(file)
+w.writerows(data)
+
+# always write binary for cross platform implementation
+csv.writer(fp, delimiter="|")
+
+# sort on arbitrary formula
+new_data.sort(key=lambda row: (row[2]-row[3])/row[2])
+
+4 Regular Expressions
+import re
+re.match(pattern, string)     #only beginning of a string
+re.search()                   #in entire string
+re.findall(pattern, stirng)   #returns a list of matches. re.finditer returns and iterator
+re.split()
+re.sub(pattern, rep1, string[,count]) #returns a string in which rep1 is replaced unless count is reached
+re.compile(pattern)           #compiles, object of which can be used for other module
+
+to match single backslash \, we need to add \\\\ four backslashes, as python also escapes it
+in python we can provide raw string as
+p = r"C:\abc"
+
+5 Datetime
+import datetime
+from datetime import date, time, datetime
+import time
+from time import mktime
+
+>>> d1 = date(2014,02, 04)
+>>> d2 = date(2014,04, 04)
+>>> print d2 - d1
+59 days, 0:00:00
+>>> (d2-d1).days
+59
+
+
+
+
+
+
+.. continued datetime
+>>> print date.today()
+2014-04-03
+
+#time(hh,min,s,us)
+# local time of day
+# always 24 hour format
+
+>>> print t2- t1
+#time(hh,min,s,us)
+# local time of day
+# always 24 hour format
+
+>>> print t2- t1
+TypeError: unsupported operand type(s) for -: 'datetime.time' and 'datetime.time'
+
+datetime
+>>> d1 = datetime.now()
+>>> print d1
+2014-04-03 10:09:18.484185
+>>> d2 = d1 + timedelta(30)
+>>> print d2
+2014-05-03 10:09:18.484185
+
+datetime format string
+%a %A    weekday
+%w              weedkay number
+%b %B           month name
+%d              day of month
+%H %I   hour 24, 12
+%j              day of year
+%m              month
+%M              minute
+%p              am/pm
+%S              second
+%U %W   week number of year , Sun (Mon) as first day of week
+%y %Y   year, 00, 2014
+
+today = datetime.datetime.now()
+today.weekday()
+# in new python
+>>> datetime.strptime('4 apr 2009', '%m/%d/%y')
+
+9 iterator
+introduced in 2.1
+overhead in writing a lot of code
+generator make it easier to write iterator
+
+
+
+
+
+	10 Generator
+common while loop pattern, psuedo code
+<do setup>
+result = []
+while True:
+        <generate value>
+        result.append(value)
+        if <done>:
+                break
+
+ass GenericIterator(object):
+        def __init__(self,...):
+                <do setup>
+                <store state>
+        def next(self):
+                <load state>
+                <generate value>
+                if <done>:
+                        raise StopIteration()
+                <store state>
+                return value
+
+Generator came in 2.2
+def generator(..):
+        <do setup>
+        while True:
+                <generate value>
+                yield value
+                if <done>:
+                        break
+
+def collatz(n):
+        sequence = []
+        while n!= 1:
+                if n%2 == 0:
+                        n /=2
+                else:
+                        n = 3*n +1
+                yield n
+
+for x in collatz(7):
+        print x,
+
+
+11 context-mngr-and-with-stmt
+to use with statement in our code, we need two special methods
+
+__enter__
+__exit__
+
+Can be used with transaction, to commit or rollback at the end
+
+from contextlib import closing
+import urllib
+
+Decorator
+from contextlib import contextmanager
+
+12,13 Decorator
+
+Fibonacci example
+cache = {}
+def cached_call(f, *args):
+        global cache
+        if (f, args) not in cache:
+            cache[(f, args)] = f(*args)
+        return cache[(f, args)]
+def fibonacci1(n):
+        print "Computing fibonacci1(%d)" % n
+        if n in {0, 1}:
+            return 1
+        else:
+            return fibonacci1(n-1) + fibonacci1(n-2)
+
+def fibonacci2(n):
+        print "Computing fibonacci2(%d)" % n
+        if n in {0, 1}:
+            return 1
+        else:
+            return cached_call(fibonacci2, n-1) + cached_call(fibonacci2, n-2)
+
+
+
+	
+Decorated
+from functools import wraps
+def cached(f):
+    cache = {}
+    @wraps(f)
+    def cached_f(*args):
+        if args not in cache:
+            cache[args] = f(*args)
+        return cache[args]
+    return cached_f
+
+@cached
+def fibonacci(n):
+    print "Computing fibonacci(%d)" % n
+    if n in {0, 1}:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+print fibonacci(10)
+
+16. Dynamic code execution
+Eval(expr, globals, locals) # Evaluates expression
+> a = 1
+> eval(“a+1”)
+2
+> local = dic(a=2)
+> global = {}
+> eval(“a+1”, global, local)
+3	Exec(stmt, globals, locals) # Executes statements
+> a=1
+> exec(“b=a+1”)
+> print b
+2
+
+Compile
+> a=1
+> c=compile(“a+2”, “”, “eval”) # expr, module name, execution mode eval/exec
+> eval(c)
+> exec(c)
+
+Abstract Syntax Trees
+AST Module
+> import ast
+> tree = ast.parse(“a+2”, “”, “eval”)
+> ast.dump(tree)
+> > tree.body.right.n=3
+> c=compile(tree, “”, “eval”)
+> eval(c)
+> ast.literal_eval(“[10,2, True, ‘foo’]”)
+
+
+
+
+
+Cool Info
+Python installation directory, sys path
+>>> import sys
+>>> sys.prefix
+'/usr'
+
+
+GET environment variable
+import os
+print os.environ['HOME']
+# using get will return `none` if key is not present rather than raise a `KeyError`
+print os.environ.get('KEY_THAT_MIGHT_EXIST')
+# os.getenv is equivalent, and can also give a default value instead of None
+print os.getenv('KEY_THAT_MIGHT_EXIST', default_value)
+
+HTML special character conversion
+>>> import cgi
+>>> cgi.escape("<hello&goodbye>")
+'&lt;hello&amp;goodbye&gt;'
+
+print isinstance(s, basestring)
+
+Links
+getting started
+https://stackoverflow.com/questions/246725/how-do-i-add-tab-completion-to-the-python-shell
+https://docs.python.org/2/tutorial/interactive.html
+
+http://stackoverflow.com/questions/4906977/python-environment-variables
+http://stackoverflow.com/questions/6130768/return-none-if-dictionary-key-is-not-available
+http://stackoverflow.com/questions/441147/how-can-i-subtract-a-day-from-a-python-date
+http://stackoverflow.com/questions/6200288/pretty-printing-a-list-in-a-tabular-format
+http://stackoverflow.com/questions/4183793/str-to-time-in-python
+https://docs.python.org/2/library/time.html
+http://stackoverflow.com/questions/2997777/parsing-timestamp-with-python2-4
+
+errors and solution
+http://www.umiacs.umd.edu/~hal/ courses/2013S_ML/p0/
+http://pymotw.com/2/subprocess/
+	
+Conflu
+https://confluence.atlassian.com/ display/ DOC/Confluence Storage Format#ConfluenceStorageFormat-Links
+http://stackoverflow.com/questions/ 22835414/string-to-date-format-string-issue
+
+http://stackoverflow.com/questions/ 11611865/modify-wiki-page-confluence-programmatically
+
+
+
