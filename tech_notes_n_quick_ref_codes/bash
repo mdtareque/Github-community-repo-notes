@@ -1,0 +1,221 @@
+Bash
+# gives file present only in 2nd file
+awk 'FNR==NR{a[$1];next};!($1 in a)'  prod.pkgs uat.pkgs
+
+# suppress lines common to both files
+comm -3 uat.pkgs  prod.pkgs
+
+
+$ cat scheduler.sh
+#!/bin/bash
+
+
+isdone="false"
+while [ 1=1 ]; do
+    date >>~/check
+    a=`date +%H%M`
+    if [ "X$a" = "X0823" ] && [ "$isdone" = "false" ]
+    then
+        isdone="true"
+        echo "`date` HEY..... " >> check
+    else
+        echo "`date` Not yet ..... " >> check
+    fi
+    sleep 10
+done
+
+extractSpecificColumns.txt
+
+awk -F, '{OFS=",";print $1,$2,$3,$4,$6,$7,$8,$9,$10,$21,$22,$30,$33}' infile.csv > outfile.csv
+cut -d "," -f1-10,20-25,30-33 infile.csv > outfile.csv
+arrayContainsStringTest.sh
+#!/bin/bash
+
+array=(d welcome test exit)
+string='welcome';
+for item in ${array[*]}
+do
+        if [[ $string =~ .*$item.* ]]
+        then
+           echo "It's present!"
+   fi
+done
+cat bash-syntax.sh
+#!/bin/bash
+
+# put multi-line comment as well
+
+for line in `cat /tmp/load`
+do
+    echo ''
+done
+
+while read id_imnt
+do
+    echo -n $id_imnt,
+done < filename
+
+# exists in array demo
+array=(wlcome test welcome exit)
+string='welcome';
+for item in ${array[*]}
+do
+        if [[ $string =~ .*$item.* ]]
+        then
+           echo "It's present!"
+   fi
+done
+
+
+param=$1
+echo ${param} | awk '{print toupper($0)}'
+#!/bin/bash
+
+stringZ=$1
+echo ${#stringZ}
+case change
+echo ${param} | awk '{print toupper($0)}'
+date manipulation
+# get yesterdays date
+date -d "-1 day "
+# gets yesterdays date and add 1 hour to it
+date -d "-1 day +1 hours"
+
+# gets yesterdays date and add 11 hour to it, the date will be effective and not just blind addition
+date -d "-1 day +11 hours"
+defaults
+$ cat default.sh
+#!/bin/bash
+
+<<comment
+multiline comment
+Passed arguments don't default the same way as variables. So better always take the argument into a variable and then uses the default logic
+comment
+
+echo "Arg passed"
+
+echo "Value test"
+echo "**********"
+# Default, nothing would be printed if empty
+echo "If Null use default"
+a=$1
+echo ${a-none}
+
+# Null of empty then default
+echo "default even if empty"
+echo ${a:-none}
+
+
+echo "unset test"
+echo "**********"
+# Default, nothing would be printed if empty
+echo "Just default"
+unset a
+echo ${a-none}
+
+# Null of empty then default
+echo "default even if empty"
+echo ${a:-none}
+
+
+echo "Empty test"
+echo "**********"
+# Default, nothing would be printed if empty
+echo "Just default"
+a=
+echo ${a-none}
+
+# Null of empty then default
+echo "default even if empty"
+echo ${a:-none}
+$ cat colorTest.sh
+#!/bin/bash
+#
+#   This file echoes a bunch of color codes to the
+#   terminal to demonstrate what's available.  Each
+#   line is the color code of one forground color,
+#   out of 17 (default + 16 escapes), followed by a
+#   test use of that color on all nine background
+#   colors (default + 8 escapes).
+#
+
+T='gYw'   # The test text
+
+echo -e "\n                 40m     41m     42m     43m\
+44m     45m     46m     47m";
+
+for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
+        '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
+        '  36m' '1;36m' '  37m' '1;37m';
+        do FG=${FGs// /}
+        echo -en " $FGs \033[$FG  $T  "
+        for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
+                do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
+        done
+        echo;
+done
+
+echo
+$ cat echoTest.sh
+#!/bin/bash
+
+
+str='this is a string
+with multuple lines'
+
+echo 'NORMAL ECHO'
+echo $str
+
+echo 'ECHO WITH STRONG QUOTES'
+echo '$str'
+
+echo 'ECHO WITH WEAK QUOTES'
+echo "$str"
+
+echo 'WITH BRACES'
+echo ${str}
+
+echo 'WITH BRACES and STRONG QUOTES'
+echo '${str}'
+
+echo 'WITH BRACES and WEAK QUOTES'
+echo "${str}"
+repeated symbol printing
+printf "%.0s+" {1..10}
+usage
+usage() {
+    cat 1>&2 <<EndOfUsage
+
+Usage: $scriptName
+EndOfUsage
+    exit
+}
+Cmdline args processing
+
+# Some quick parameter processing
+[ "$#" -gt "2" ] && usage
+[ "X$1" == "X-h" ] && usage
+
+Last2Chars=${name: -2}                          # Getting last 2 chars
+name=`echo ${name%??}`                  # Removing last 2 chars, as required later
+
+globals.sh
+#!/bin/bash
+
+echo $SHLVL  ## Displays the nest levels of shells
+echo $BASH_SUBSHELL ## Displays the nest level of sub-shells
+
+( echo $SHLVL; ) # this will be same
+( echo $BASH_SUBSHELL; ) # This gives correct nested number of sub-shell
+
+v=2
+echo $v;     # 2
+{ v=4; }
+echo $v;     # 4  - Curly brackets does not lauch a subshell
+( v=6; )
+echo $v;     # 4  - round brackets do lauch a subshell, hence value is not changed here
+echo ${#stringZ}  # len of substring
+
+bashDependencyCheck.txt
+$  name="some-command"
+$  type $name > /dev/null 2&>1 || (echo >&2 "I need $name binary, but is not present. Aborting"; exit 1;)
